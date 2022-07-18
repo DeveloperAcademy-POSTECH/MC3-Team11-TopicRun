@@ -1,6 +1,6 @@
 # MC3-Team11-TopicRun
 
-# :iphone: Moment 모먼트
+# :iphone: TopicRun
 
 어플 소개
 
