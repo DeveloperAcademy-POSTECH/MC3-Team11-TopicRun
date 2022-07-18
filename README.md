@@ -9,6 +9,11 @@
 
 기능 설명
 
+## : 팀원
+
+|![San](https://github.com/DeveloperAcademy-POSTECH/MC2-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/emoji/San.png)|![Everett](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_Readme_Img/emoji/Everett.jpeg)|![Hwana](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_Readme_Img/emoji/Hwana.jpeg)|![Jedi](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_Readme_Img/emoji/Jedi.png)|![Cali](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_Readme_Img/emoji/Cali.png)|
+|San|Everett|Hwana|Jedi|Cali|
+
 
 ## :people_hugging: Authors
 
