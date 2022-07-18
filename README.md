@@ -9,14 +9,12 @@
 
 기능 설명
 
-## : 팀원
 
+## :people_hugging: Authors
 |![San](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/San.png)|![Everett](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/Everett.jpeg)|![Hwana](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/Hwana.jpeg)|![Jedi](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/Jedi.png)|![Cali](https://github.com/DeveloperAcademy-POSTECH/MC3-Team11-TopicRun/blob/main/TopicRun_ReadMe_Img/Cali.png)|
 |-|-|-|-|-|
 |San|Everett|Hwana|Jedi|Cali|
 
-
-## :people_hugging: Authors
 
 
 ## Git Commit Message
