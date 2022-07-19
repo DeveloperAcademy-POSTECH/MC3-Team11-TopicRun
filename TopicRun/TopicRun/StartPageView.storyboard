@@ -66,6 +66,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="baseForegroundColor" red="0.8666666666666667" green="1" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="topicRunButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0GG-rN-Vmz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -85,6 +88,10 @@
                             <constraint firstItem="xFc-Sj-R0B" firstAttribute="top" secondItem="Iam-IN-1LP" secondAttribute="bottom" constant="28.333333333333314" id="wgc-wE-yeg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="NicknameTextField" destination="yKb-LA-H2h" id="Q7u-nS-U5f"/>
+                        <outlet property="topicRunButton" destination="zIC-Eu-CZA" id="N74-a8-lIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
