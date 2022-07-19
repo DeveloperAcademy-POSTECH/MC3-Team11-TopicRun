@@ -82,7 +82,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zIC-Eu-CZA" secondAttribute="bottom" constant="79" id="bH4-Do-R0v"/>
                             <constraint firstItem="zIC-Eu-CZA" firstAttribute="top" secondItem="yKb-LA-H2h" secondAttribute="bottom" constant="38.666666666666629" id="bcT-DC-k0k"/>
                             <constraint firstItem="Iam-IN-1LP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ch0-wo-qs2"/>
-                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="firstBaseline" secondItem="xFc-Sj-R0B" secondAttribute="baseline" constant="37.666666666666664" symbolType="layoutAnchor" id="g2u-S7-MMh"/>
+                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="firstBaseline" secondItem="xFc-Sj-R0B" secondAttribute="baseline" constant="37.5" symbolType="layoutAnchor" id="g2u-S7-MMh"/>
                             <constraint firstItem="xFc-Sj-R0B" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="60" id="kg5-df-j5M"/>
                             <constraint firstItem="Pvz-Hp-MQF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="llY-bZ-yKc"/>
                             <constraint firstItem="yKb-LA-H2h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pDQ-Tt-X7Q"/>
