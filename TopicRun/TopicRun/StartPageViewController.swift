@@ -14,6 +14,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var topicRunButton: UIButton!
     
     
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         
@@ -46,6 +47,14 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
+        let text = NicknameTextField.text!
+        defaults.set(text, forKey: "NickName")
+        
+        
+        // 저장된 값 불러올떄
+        //defaults.synchronize()
+        //let name = defaults.string(forKey: "NickName") as? NSString
+
         self.view.endEditing(true)
         return true
     }
