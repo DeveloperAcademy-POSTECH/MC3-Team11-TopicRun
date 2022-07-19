@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E832F6288683E600F78EE4 /* StartPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E832F5288683E600F78EE4 /* StartPageView.storyboard */; };
+		05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E832F72886840600F78EE4 /* StartPageViewController.swift */; };
 		36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531828852ED10099CD64 /* AppDelegate.swift */; };
 		36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531A28852ED10099CD64 /* SceneDelegate.swift */; };
 		36DF531D28852ED10099CD64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531C28852ED10099CD64 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05E832F5288683E600F78EE4 /* StartPageView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageView.storyboard; sourceTree = "<group>"; };
+		05E832F72886840600F78EE4 /* StartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		36DF531528852ED10099CD64 /* TopicRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopicRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DF531828852ED10099CD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DF531A28852ED10099CD64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				36DF531A28852ED10099CD64 /* SceneDelegate.swift */,
 				36DF531C28852ED10099CD64 /* ViewController.swift */,
 				36DF531E28852ED10099CD64 /* Main.storyboard */,
+				05E832F5288683E600F78EE4 /* StartPageView.storyboard */,
+				05E832F72886840600F78EE4 /* StartPageViewController.swift */,
 				36DF532128852ED20099CD64 /* Assets.xcassets */,
 				36DF532328852ED20099CD64 /* LaunchScreen.storyboard */,
 				36DF532628852ED20099CD64 /* Info.plist */,
@@ -128,6 +134,7 @@
 				36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */,
 				36DF532228852ED20099CD64 /* Assets.xcassets in Resources */,
 				36DF532028852ED10099CD64 /* Main.storyboard in Resources */,
+				05E832F6288683E600F78EE4 /* StartPageView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			files = (
 				36DF531D28852ED10099CD64 /* ViewController.swift in Sources */,
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
+				05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
