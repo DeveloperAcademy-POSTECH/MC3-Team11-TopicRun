@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BottomSheetViewController: UIViewController {
+class BottomSheetViewController: UIViewController{
     
     var defaultHeight : CGFloat = 300
     
@@ -17,15 +17,23 @@ class BottomSheetViewController: UIViewController {
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
         return view
     }()
-
+    
+    private let indicatorView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.layer.cornerRadius = 3
+        return view
+    }()
+    
     private let bottomSheetView : UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.984447062, green: 0.9844469428, blue: 0.9844469428, alpha: 1)
         view.layer.cornerRadius = 10
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.clipsToBounds = true
         return view
     }()
+    
     // 강제 언래핑
     private var bottomSheetViewTopConstraint : NSLayoutConstraint!
     
@@ -53,6 +61,7 @@ class BottomSheetViewController: UIViewController {
     private func setupUI(){
         view.addSubview(dimmedView)
         view.addSubview(bottomSheetView)
+        view.addSubview(indicatorView)
         dimmedView.alpha = 0.0
         setupLayout()
         
@@ -79,6 +88,15 @@ class BottomSheetViewController: UIViewController {
             bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bottomSheetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             bottomSheetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        
+        // 인디케이터
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            indicatorView.widthAnchor.constraint(equalToConstant: 50),
+            indicatorView.heightAnchor.constraint(equalToConstant: indicatorView.layer.cornerRadius * 2),
+            indicatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            indicatorView.bottomAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 12)
         ])
     }
     
