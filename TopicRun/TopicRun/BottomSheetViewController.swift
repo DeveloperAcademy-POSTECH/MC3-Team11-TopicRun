@@ -31,6 +31,11 @@ class BottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        let dimmedTap = UITapGestureRecognizer(target: self, action: #selector(dimmedViewTapped(_:)))
+        dimmedView.addGestureRecognizer(dimmedTap)
+        dimmedView.isUserInteractionEnabled = true
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -80,7 +85,26 @@ class BottomSheetViewController: UIViewController {
             self.dimmedView.alpha = 0.7
             self.view.layoutIfNeeded()
         }, completion: nil)
-
+    }
+    
+    private func hideBottomSheet(){
+        let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
+        let bottomPadding = view.safeAreaInsets.bottom
+        
+        bottomSheetViewTopConstraint.constant = safeAreaHeight + bottomPadding
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            self.dimmedView.alpha = 0.0
+            self.view.layoutIfNeeded()
+        }) { _ in
+            if self.presentingViewController != nil {
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
+    }
+    
+    @objc private func dimmedViewTapped(_ tapRecognizer : UITapGestureRecognizer) {
+        hideBottomSheet()
     }
 }
  
