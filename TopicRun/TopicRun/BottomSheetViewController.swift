@@ -9,6 +9,7 @@ import UIKit
 
 class BottomSheetViewController: UIViewController {
     
+    var defaultHeight : CGFloat = 300
     
     private let dimmedView : UIView = {
         let view = UIView()
@@ -30,13 +31,12 @@ class BottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        showBottomSheet()
+
     }
-    
     
     
     private func setupUI(){
@@ -70,4 +70,17 @@ class BottomSheetViewController: UIViewController {
             bottomSheetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    
+    private func showBottomSheet(){
+        let safeAreaHeight : CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
+        let bottomPadding : CGFloat = view.safeAreaInsets.bottom
+        
+        bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - defaultHeight
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            self.dimmedView.alpha = 0.7
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+
+    }
 }
+ 
