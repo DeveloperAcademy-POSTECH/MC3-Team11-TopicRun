@@ -11,8 +11,10 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        self.navigationItem.setHidesBackButton(true, animated: true)
+//        self.navigationItem.leftBarButtonItems = []
+//        self.navigationItem.hidesBackButton = true
+//         Do any additional setup after loading the view.
     }
     
 

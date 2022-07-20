@@ -13,6 +13,7 @@
 		36DF532028852ED10099CD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF531E28852ED10099CD64 /* Main.storyboard */; };
 		36DF532228852ED20099CD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532128852ED20099CD64 /* Assets.xcassets */; };
 		36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532328852ED20099CD64 /* LaunchScreen.storyboard */; };
+		CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		36DF532128852ED20099CD64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DF532428852ED20099CD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36DF532628852ED20099CD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				36DF532128852ED20099CD64 /* Assets.xcassets */,
 				36DF532328852ED20099CD64 /* LaunchScreen.storyboard */,
 				36DF532628852ED20099CD64 /* Info.plist */,
+				CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */,
 			);
 			path = TopicRun;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				36DF531D28852ED10099CD64 /* ViewController.swift in Sources */,
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
+				CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
