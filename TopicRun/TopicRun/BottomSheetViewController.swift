@@ -12,6 +12,7 @@ class BottomSheetViewController: UIViewController{
     var defaultHeight : CGFloat = 300
     
     private lazy var bottomSheetPanStartingTopConstant : CGFloat = bottomSheetViewTopConstraint.constant
+    
     private let dimmedView : UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
@@ -25,7 +26,7 @@ class BottomSheetViewController: UIViewController{
         return view
     }()
     
-    private let bottomSheetView : UIView = {
+    let bottomSheetView : UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.984447062, green: 0.9844469428, blue: 0.9844469428, alpha: 1)
         view.layer.cornerRadius = 10
@@ -40,7 +41,7 @@ class BottomSheetViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        setupLayout()
         let dimmedTap = UITapGestureRecognizer(target: self, action: #selector(dimmedViewTapped(_:)))
         dimmedView.addGestureRecognizer(dimmedTap)
         dimmedView.isUserInteractionEnabled = true
@@ -58,16 +59,15 @@ class BottomSheetViewController: UIViewController{
     }
     
     
-    private func setupUI(){
+    func setupUI(){
         view.addSubview(dimmedView)
         view.addSubview(bottomSheetView)
         view.addSubview(indicatorView)
         dimmedView.alpha = 0.0
-        setupLayout()
         
     }
 
-    private func setupLayout(){
+    func setupLayout(){
         dimmedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             dimmedView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -96,7 +96,7 @@ class BottomSheetViewController: UIViewController{
             indicatorView.widthAnchor.constraint(equalToConstant: 50),
             indicatorView.heightAnchor.constraint(equalToConstant: indicatorView.layer.cornerRadius * 2),
             indicatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            indicatorView.bottomAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 12)
+            indicatorView.bottomAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 14)
         ])
     }
     
@@ -111,7 +111,7 @@ class BottomSheetViewController: UIViewController{
         }, completion: nil)
     }
     
-    private func hideBottomSheet(){
+    func hideBottomSheet(){
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding = view.safeAreaInsets.bottom
         
@@ -128,6 +128,7 @@ class BottomSheetViewController: UIViewController{
     }
     
     @objc private func dimmedViewTapped(_ tapRecognizer : UITapGestureRecognizer) {
+        print("dimmed!")
         hideBottomSheet()
     }
     
