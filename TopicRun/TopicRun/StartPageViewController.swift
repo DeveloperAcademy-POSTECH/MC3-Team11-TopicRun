@@ -7,14 +7,27 @@
 
 import Foundation
 import UIKit
+import HealthKit
 
 class StartPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var NicknameTextField: UITextField!
     @IBOutlet weak var topicRunButton: UIButton!
+    @IBOutlet var heartRateLabel: UILabel!
     
+    let healthStore = HKHealthStore()
+    let heartRateUnit:HKUnit = HKUnit(from: "count/min")
+    let heartRateType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    var heartRateQuery:HKQuery?
     
-
+    var timer = Timer()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        authorizeHealthKit()
+        
+    }
+    
     override func viewDidLoad() {
         
         
@@ -24,6 +37,12 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
         NicknameTextField.delegate = self
         topicRunButton.isEnabled = false
         topicRunButton.alpha = 0.5
+        
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if HKHealthStore.isHealthDataAvailable() {
+                self.getLatestHeartRate()
+            }
+        })
     }
     
     
@@ -62,5 +81,41 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    func authorizeHealthKit() {
+        let allTypes = Set([
+            HKObjectType.quantityType(forIdentifier: .heartRate)!])
+        
+        healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+            if success {
+                print("허용 완료")
+            }
+        }
+    }
+    
+    func getLatestHeartRate()
+    {
+        let startDate = Date.distantPast
+        let endDate = Date()
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
+        let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
+        
+        let  heartRateQuery =  HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 1, sortDescriptors: sortDescriptors, resultsHandler: { (query, results, error) in
+            guard  let result = results else { return }
+            if(results!.count > 0){
+            guard let currData = result[0] as? HKQuantitySample else { return }
+            let beatsPerMinuteUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
+            DispatchQueue.main.async {
+                self.heartRateLabel.text = String(Int(currData.quantity.doubleValue(for: beatsPerMinuteUnit)))
+                print("Heart Rate: " + String(Int(currData.quantity.doubleValue(for: beatsPerMinuteUnit))))
+                print("Start Date: \(currData.startDate)")
+            }
+            }
+        })
+        healthStore.execute(heartRateQuery)
+        
     }
 }

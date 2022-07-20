@@ -15,6 +15,7 @@
 		36DF532028852ED10099CD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF531E28852ED10099CD64 /* Main.storyboard */; };
 		36DF532228852ED20099CD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532128852ED20099CD64 /* Assets.xcassets */; };
 		36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532328852ED20099CD64 /* LaunchScreen.storyboard */; };
+		CCAA3B682887C6E000E29E3B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAA3B672887C6E000E29E3B /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		36DF532128852ED20099CD64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DF532428852ED20099CD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36DF532628852ED20099CD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCAA3B652887C6E000E29E3B /* TopicRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopicRun.entitlements; sourceTree = "<group>"; };
+		CCAA3B672887C6E000E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAA3B682887C6E000E29E3B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +50,7 @@
 			children = (
 				36DF531728852ED10099CD64 /* TopicRun */,
 				36DF531628852ED10099CD64 /* Products */,
+				CCAA3B662887C6E000E29E3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +65,7 @@
 		36DF531728852ED10099CD64 /* TopicRun */ = {
 			isa = PBXGroup;
 			children = (
+				CCAA3B652887C6E000E29E3B /* TopicRun.entitlements */,
 				36DF531828852ED10099CD64 /* AppDelegate.swift */,
 				36DF531A28852ED10099CD64 /* SceneDelegate.swift */,
 				36DF531C28852ED10099CD64 /* ViewController.swift */,
@@ -71,6 +77,14 @@
 				36DF532628852ED20099CD64 /* Info.plist */,
 			);
 			path = TopicRun;
+			sourceTree = "<group>";
+		};
+		CCAA3B662887C6E000E29E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCAA3B672887C6E000E29E3B /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +307,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,8 +336,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRun.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

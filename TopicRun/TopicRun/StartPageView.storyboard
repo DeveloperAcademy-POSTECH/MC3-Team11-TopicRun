@@ -24,16 +24,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pvz-Hp-MQF">
-                                <rect key="frame" x="146.33333333333334" y="543" width="97.666666666666657" height="34"/>
+                                <rect key="frame" x="152.33333333333334" y="543" width="85.666666666666657" height="34"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Z2-sV-alm">
-                                        <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Z2-sV-alm">
+                                        <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-jw-2F9">
-                                        <rect key="frame" x="45.666666666666657" y="0.0" width="52" height="34"/>
+                                        <rect key="frame" x="33.666666666666657" y="0.0" width="52" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zIC-Eu-CZA" secondAttribute="bottom" constant="79" id="bH4-Do-R0v"/>
                             <constraint firstItem="zIC-Eu-CZA" firstAttribute="top" secondItem="yKb-LA-H2h" secondAttribute="bottom" constant="38.666666666666629" id="bcT-DC-k0k"/>
                             <constraint firstItem="Iam-IN-1LP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ch0-wo-qs2"/>
-                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="firstBaseline" secondItem="xFc-Sj-R0B" secondAttribute="baseline" constant="37.5" symbolType="layoutAnchor" id="g2u-S7-MMh"/>
+                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="firstBaseline" secondItem="xFc-Sj-R0B" secondAttribute="baseline" constant="37.666666666666664" symbolType="layoutAnchor" id="g2u-S7-MMh"/>
                             <constraint firstItem="xFc-Sj-R0B" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="60" id="kg5-df-j5M"/>
                             <constraint firstItem="Pvz-Hp-MQF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="llY-bZ-yKc"/>
                             <constraint firstItem="yKb-LA-H2h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pDQ-Tt-X7Q"/>
@@ -91,6 +91,7 @@
                     </view>
                     <connections>
                         <outlet property="NicknameTextField" destination="yKb-LA-H2h" id="Q7u-nS-U5f"/>
+                        <outlet property="heartRateLabel" destination="7Z2-sV-alm" id="tDT-9T-mD6"/>
                         <outlet property="topicRunButton" destination="zIC-Eu-CZA" id="N74-a8-lIG"/>
                     </connections>
                 </viewController>
