@@ -84,6 +84,7 @@
 		05756DE62887D0CD0006C2FD /* TopicRunDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopicRunDebug.entitlements; sourceTree = "<group>"; };
 		05E832F5288683E600F78EE4 /* StartPageView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageView.storyboard; sourceTree = "<group>"; };
 		05E832F72886840600F78EE4 /* StartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
+		05FA878C2887E57700BDC007 /* TopicRunWatch WatchKit ExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopicRunWatch WatchKit ExtensionDebug.entitlements"; sourceTree = "<group>"; };
 		36DF531528852ED10099CD64 /* TopicRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopicRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DF531828852ED10099CD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DF531A28852ED10099CD64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		05756DCE2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				05FA878C2887E57700BDC007 /* TopicRunWatch WatchKit ExtensionDebug.entitlements */,
 				CCAA3C242887D7C300E29E3B /* TopicRunWatch WatchKit Extension.entitlements */,
 				05756DCF2887D0AF0006C2FD /* InterfaceController.swift */,
 				05756DD12887D0AF0006C2FD /* ExtensionDelegate.swift */,
@@ -393,14 +395,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				DEVELOPMENT_TEAM = TZPPZDYCQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Everett.TopicRun;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -424,7 +426,7 @@
 				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Everett.TopicRun;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,14 +443,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "TopicRunWatch WatchKit Extension/TopicRunWatch WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TopicRunWatch WatchKit Extension/TopicRunWatch WatchKit ExtensionDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				DEVELOPMENT_TEAM = TZPPZDYCQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TopicRunWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TopicRunWatch WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = TopicRunWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKExtensionDelegateClassName = TopicRunWatch_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -458,7 +463,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -481,6 +486,9 @@
 				INFOPLIST_FILE = "TopicRunWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TopicRunWatch WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = TopicRunWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKExtensionDelegateClassName = TopicRunWatch_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -623,12 +631,12 @@
 				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRunDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				DEVELOPMENT_TEAM = TZPPZDYCQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = StartPageView;
@@ -639,7 +647,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -659,9 +667,9 @@
 				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "심박수 측정을 위한 건강 정보 사용 동의";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = StartPageView;

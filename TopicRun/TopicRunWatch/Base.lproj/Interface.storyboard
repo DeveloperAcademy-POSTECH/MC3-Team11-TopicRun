@@ -11,7 +11,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TopicRunWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="Label" baselineAdjustment="alignCenters" id="hXe-9k-K3J">
+                        <label alignment="center" text="--" baselineAdjustment="alignCenters" id="hXe-9k-K3J">
                             <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                         </label>
                     </items>
