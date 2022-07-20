@@ -11,6 +11,7 @@ class BottomSheetViewController: UIViewController {
     
     var defaultHeight : CGFloat = 300
     
+    private lazy var bottomSheetPanStartingTopConstant : CGFloat = bottomSheetViewTopConstraint.constant
     private let dimmedView : UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
@@ -36,7 +37,12 @@ class BottomSheetViewController: UIViewController {
         dimmedView.addGestureRecognizer(dimmedTap)
         dimmedView.isUserInteractionEnabled = true
         
+        let viewPan = UIPanGestureRecognizer(target: self, action: #selector(bottomSheetViewPanned(_:)))
+        viewPan.delaysTouchesBegan = false
+        viewPan.delaysTouchesEnded = false
+        bottomSheetView.addGestureRecognizer(viewPan)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showBottomSheet()
@@ -105,6 +111,39 @@ class BottomSheetViewController: UIViewController {
     
     @objc private func dimmedViewTapped(_ tapRecognizer : UITapGestureRecognizer) {
         hideBottomSheet()
+    }
+    
+    @objc private func bottomSheetViewPanned(_ panGestureRecognizer : UIPanGestureRecognizer){
+        let translation = panGestureRecognizer.translation(in: bottomSheetView)
+        let velocity = panGestureRecognizer.velocity(in: bottomSheetView)
+        
+        switch panGestureRecognizer.state {
+        case .began :
+            bottomSheetPanStartingTopConstant = bottomSheetViewTopConstraint.constant
+        case .changed :
+            
+            bottomSheetViewTopConstraint.constant = bottomSheetPanStartingTopConstant + translation.y > bottomSheetPanStartingTopConstant ? bottomSheetPanStartingTopConstant + translation.y : bottomSheetPanStartingTopConstant
+            
+            
+        case .ended:
+            if bottomSheetView.frame.height > 40{
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+                    self.bottomSheetViewTopConstraint.constant = self.bottomSheetPanStartingTopConstant
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+
+            } else{
+                hideBottomSheet()
+                return
+            }
+            if velocity.y > 1500 {
+                hideBottomSheet()
+            return
+            }
+        default :
+            break
+        }
+    
     }
 }
  
