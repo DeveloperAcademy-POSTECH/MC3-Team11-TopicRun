@@ -12,12 +12,21 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var userLocationButton: UIButton!
+    
+    @IBAction func goUserLocation(_ sender: Any) {
+        
+        mapView.centerToLocation(locationManager.location ?? CLLocation(latitude: 36.0138857, longitude: 129.3231836), regionRadius: mapView.radius)
+        
+        
+    }
     let locationManager = CLLocationManager()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       
+        
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -66,5 +75,31 @@ private extension MKMapView {
             )
             
             setRegion(coordinateRegion, animated: true)
+            
         }
+    
+//    func topCenterCoordinate() -> CLLocationCoordinate2D {
+//        return self.convert(CGPoint(x: self.frame.size.width / 2.0, y: 0), toCoordinateFrom: self)
+//    }
+//    
+//    func currentRadius() -> Double {
+//        let centerLocation = CLLocation(latitude: self.centerCoordinate.latitude, longitude: self.centerCoordinate.longitude)
+//        let topCenterCoordinate = self.topCenterCoordinate()
+//        let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
+//        return centerLocation.distance(from: topCenterLocation)
+//    }
+    
+    var topLeftCoordinate: CLLocationCoordinate2D{
+        return convert(CGPoint.zero, toCoordinateFrom: self)
+        
+    }
+    var radius: CLLocationDistance{
+        let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+        
+        let topLeftLocation = CLLocation(latitude: topLeftCoordinate.latitude, longitude: topLeftCoordinate.longitude)
+        
+        return centerLocation.distance(from: topLeftLocation)
+        
+    }
+    
 }

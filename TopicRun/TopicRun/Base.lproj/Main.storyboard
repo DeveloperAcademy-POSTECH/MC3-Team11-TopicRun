@@ -46,19 +46,34 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-B2-Lov">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuh-rk-8Db">
+                                <rect key="frame" x="40" y="737" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="EBK-WE-Pur"/>
+                                    <constraint firstAttribute="height" constant="45" id="TbW-Ll-I75"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="location.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="goUserLocation:" destination="Bkm-1g-yAi" eventType="touchUpInside" id="J5p-G5-Ghy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xqs-vE-u6r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yR9-B2-Lov" secondAttribute="trailing" id="87u-jq-ORZ"/>
                             <constraint firstItem="yR9-B2-Lov" firstAttribute="leading" secondItem="ZoK-jZ-0Kj" secondAttribute="leading" id="9pD-cV-1v8"/>
+                            <constraint firstItem="Xqs-vE-u6r" firstAttribute="bottom" secondItem="Iuh-rk-8Db" secondAttribute="bottom" constant="80" id="A2C-j7-FiU"/>
                             <constraint firstAttribute="bottom" secondItem="yR9-B2-Lov" secondAttribute="bottom" id="ZsF-fI-a5j"/>
+                            <constraint firstItem="Iuh-rk-8Db" firstAttribute="leading" secondItem="Xqs-vE-u6r" secondAttribute="leading" constant="40" id="caU-4O-Ow9"/>
                             <constraint firstItem="yR9-B2-Lov" firstAttribute="top" secondItem="ZoK-jZ-0Kj" secondAttribute="top" id="i68-ZU-RzJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P0l-jc-88S"/>
                     <connections>
                         <outlet property="mapView" destination="yR9-B2-Lov" id="dY9-LG-7fm"/>
+                        <outlet property="userLocationButton" destination="Iuh-rk-8Db" id="MV9-4B-pMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8e-RZ-VSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,6 +100,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
