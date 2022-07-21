@@ -9,33 +9,50 @@ import UIKit
 
 class FindTopicViewController: BottomSheetViewController {
 
-    private lazy var buttonView : UIButton = {
+    private lazy var buttonView : UIView = {
         makeButtonView()
     }()
     
+    let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .semibold)
+    lazy var xmark = UIImage(systemName: "xmark", withConfiguration: config)
+    lazy var xmarkView = UIImageView.init(image: xmark)
+    
     //MARK: - override from BottomSheetViewController
     
-    override var defaultHeight: CGFloat {400}
-    
+    override var defaultHeight: CGFloat {196}
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         let buttomTap = UITapGestureRecognizer(target: self, action: #selector(buttonClosed))
         buttonView.addGestureRecognizer(buttomTap)
         buttonView.isUserInteractionEnabled = true
+        xmarkView.tintColor = .white
+        super.viewDidLoad()
+
     }
     
     override func setupUI() {
+
         super.setupUI()
-        view.addSubview(buttonView)
+        bottomSheetView.addSubview(buttonView)
+        buttonView.addSubview(xmarkView)
+
     }
     
     override func setupLayout() {
+        
         super.setupLayout()
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 20),
-            buttonView.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor, constant: -20)
+            buttonView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 16),
+            buttonView.heightAnchor.constraint(equalToConstant: buttonView.frame.width),
+            buttonView.widthAnchor.constraint(equalToConstant: buttonView.frame.height),
+            buttonView.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor, constant: -16)
+        ])
+        
+        xmarkView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            xmarkView.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+            xmarkView.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
         ])
     }
     
@@ -46,10 +63,10 @@ class FindTopicViewController: BottomSheetViewController {
 
 extension FindTopicViewController : ContainsButton {
     
-    func makeButtonView() -> UIButton {
-        let closedButton = UIButton(type: .system)
-        closedButton.backgroundColor = .black
-        closedButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+    func makeButtonView() -> UIView {
+        let closedButton = UIView()
+        closedButton.layer.backgroundColor = UIColor.black.cgColor
+        closedButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
         closedButton.layer.cornerRadius = closedButton.bounds.size.width / 2
         return closedButton
     }

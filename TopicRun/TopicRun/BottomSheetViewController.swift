@@ -132,7 +132,7 @@ class BottomSheetViewController: UIViewController{
         hideBottomSheet()
     }
     
-    @objc private func bottomSheetViewPanned(_ panGestureRecognizer : UIPanGestureRecognizer){
+    @objc func bottomSheetViewPanned(_ panGestureRecognizer : UIPanGestureRecognizer){
         let translation = panGestureRecognizer.translation(in: bottomSheetView)
         let velocity = panGestureRecognizer.velocity(in: bottomSheetView)
         

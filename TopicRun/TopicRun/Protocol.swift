@@ -10,10 +10,6 @@ import UIKit
 
 
 @objc protocol ContainsButton : AnyObject{
-    func makeButtonView() -> UIButton
+    func makeButtonView() -> UIView
     @objc func buttonClosed()
 }
-
-//protocol Draggable{
-//    @objc func dragClosd()
-//}
