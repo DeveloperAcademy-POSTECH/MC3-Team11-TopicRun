@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
     @IBOutlet var mapView: MKMapView!
@@ -33,6 +33,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //36.014986
+        //129.325184
+        mapView.delegate = self
+        let firstPlace = MapMarker(keyword: ["건강","운세","돈"], subject: "건강 운세로 돈을 벌어라.", coordinate: CLLocationCoordinate2D(latitude: 36.014986, longitude: 129.325184), isVisit: false)
+        
+        //36.012986
+        //129.325784
+        let secondPlace = MapMarker(keyword: ["매미","여름","얼음"], subject: "여름에 매미에게 얼음을 보여주자", coordinate: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), isVisit: false)
+        
         
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.white.cgColor
@@ -56,6 +65,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         
         mapView.centerToLocation(locationManager.location ?? CLLocation(latitude: 36.0138857, longitude: 129.3231836))
+        
+        mapView.addAnnotation(firstPlace)
+        mapView.addAnnotation(secondPlace)
+        
         // back button hide.
         //        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.leftBarButtonItems = []
@@ -63,6 +76,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         //         Do any additional setup after loading the view.
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        print("show")
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        let markerImage = UIImage(named: "heartMarker")
+        annotationView.image = markerImage
+            return annotationView
+        }
     
     /*
      // MARK: - Navigation
@@ -80,6 +100,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
 //36.0138857
 //129.3231836
+
+//36.014986
+//129.325184
+
+//36.012986
+//129.325784
 
 private extension MKMapView {
     func centerToLocation(
