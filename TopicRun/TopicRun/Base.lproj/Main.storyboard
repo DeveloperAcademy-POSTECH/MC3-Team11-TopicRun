@@ -53,32 +53,63 @@
                                     <constraint firstAttribute="height" constant="45" id="TbW-Ll-I75"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="location.circle.fill" catalog="system"/>
+                                <state key="normal" image="MyLocationButton"/>
                                 <connections>
                                     <action selector="goUserLocation:" destination="Bkm-1g-yAi" eventType="touchUpInside" id="J5p-G5-Ghy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하트 위치로 이동해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGG-1E-ldY" userLabel="UserHelpLabel" customClass="PaddingLabel" customModule="TopicRun" customModuleProvider="target">
+                                <rect key="frame" x="122" y="70" width="170.5" height="21"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="HlM-3C-1HO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="KNq-V9-AWY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iy-L9-1tm" userLabel="BackButton">
+                                <rect key="frame" x="40" y="58" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="goe-No-DuG"/>
+                                    <constraint firstAttribute="width" constant="45" id="jKy-er-PRC"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <action selector="goBack:" destination="Bkm-1g-yAi" eventType="touchUpInside" id="7bK-qh-yLw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xqs-vE-u6r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tGG-1E-ldY" firstAttribute="top" secondItem="ZoK-jZ-0Kj" secondAttribute="top" constant="70" id="5Bl-on-1sZ"/>
                             <constraint firstAttribute="trailing" secondItem="yR9-B2-Lov" secondAttribute="trailing" id="87u-jq-ORZ"/>
                             <constraint firstItem="yR9-B2-Lov" firstAttribute="leading" secondItem="ZoK-jZ-0Kj" secondAttribute="leading" id="9pD-cV-1v8"/>
                             <constraint firstItem="Xqs-vE-u6r" firstAttribute="bottom" secondItem="Iuh-rk-8Db" secondAttribute="bottom" constant="80" id="A2C-j7-FiU"/>
+                            <constraint firstItem="tGG-1E-ldY" firstAttribute="centerX" secondItem="Xqs-vE-u6r" secondAttribute="centerX" id="Ori-Vh-713"/>
                             <constraint firstAttribute="bottom" secondItem="yR9-B2-Lov" secondAttribute="bottom" id="ZsF-fI-a5j"/>
                             <constraint firstItem="Iuh-rk-8Db" firstAttribute="leading" secondItem="Xqs-vE-u6r" secondAttribute="leading" constant="40" id="caU-4O-Ow9"/>
+                            <constraint firstItem="7iy-L9-1tm" firstAttribute="leading" secondItem="Xqs-vE-u6r" secondAttribute="leading" constant="40" id="gaX-ct-Kat"/>
                             <constraint firstItem="yR9-B2-Lov" firstAttribute="top" secondItem="ZoK-jZ-0Kj" secondAttribute="top" id="i68-ZU-RzJ"/>
+                            <constraint firstItem="7iy-L9-1tm" firstAttribute="centerY" secondItem="tGG-1E-ldY" secondAttribute="centerY" id="qbx-co-HxK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="P0l-jc-88S"/>
+                    <navigationItem key="navigationItem" id="P0l-jc-88S">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="7iy-L9-1tm" id="rLw-QQ-Z67"/>
+                        <outlet property="label" destination="tGG-1E-ldY" id="Vdb-OO-mUq"/>
                         <outlet property="mapView" destination="yR9-B2-Lov" id="dY9-LG-7fm"/>
                         <outlet property="userLocationButton" destination="Iuh-rk-8Db" id="MV9-4B-pMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8e-RZ-VSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="116"/>
+            <point key="canvasLocation" x="1653.6231884057972" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e5V-uK-ELi">
@@ -100,7 +131,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="BackButton" width="40" height="40"/>
+        <image name="MyLocationButton" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
