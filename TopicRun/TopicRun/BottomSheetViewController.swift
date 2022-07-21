@@ -9,7 +9,7 @@ import UIKit
 
 class BottomSheetViewController: UIViewController{
     
-    var defaultHeight : CGFloat = 300
+    var defaultHeight : CGFloat {300}
     
     private lazy var bottomSheetPanStartingTopConstant : CGFloat = bottomSheetViewTopConstraint.constant
     
@@ -21,7 +21,7 @@ class BottomSheetViewController: UIViewController{
     
     private let indicatorView : UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor(red: 0.745, green: 0.749, blue: 0.749, alpha: 1)
         view.layer.cornerRadius = 3
         return view
     }()
@@ -46,6 +46,8 @@ class BottomSheetViewController: UIViewController{
         dimmedView.addGestureRecognizer(dimmedTap)
         dimmedView.isUserInteractionEnabled = true
         
+        indicatorView.isUserInteractionEnabled = false
+        
         let viewPan = UIPanGestureRecognizer(target: self, action: #selector(bottomSheetViewPanned(_:)))
         viewPan.delaysTouchesBegan = false
         viewPan.delaysTouchesEnded = false
@@ -58,13 +60,11 @@ class BottomSheetViewController: UIViewController{
 
     }
     
-    
     func setupUI(){
         view.addSubview(dimmedView)
         view.addSubview(bottomSheetView)
         view.addSubview(indicatorView)
         dimmedView.alpha = 0.0
-        
     }
 
     func setupLayout(){
@@ -80,14 +80,14 @@ class BottomSheetViewController: UIViewController{
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
         //
         let topConstant = view.safeAreaInsets.bottom + view.safeAreaLayoutGuide.layoutFrame.height
-        
+
         bottomSheetViewTopConstraint = bottomSheetView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstant)
         
         NSLayoutConstraint.activate([
-            bottomSheetViewTopConstraint,
-            bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bottomSheetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            bottomSheetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            bottomSheetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomSheetView.bottomAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor),
+            bottomSheetViewTopConstraint
         ])
         
         // 인디케이터
@@ -145,7 +145,7 @@ class BottomSheetViewController: UIViewController{
             
             
         case .ended:
-            if bottomSheetView.frame.height > 40{
+            if bottomSheetView.frame.height > bottomSheetPanStartingTopConstant * 0.125{
                 UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
                     self.bottomSheetViewTopConstraint.constant = self.bottomSheetPanStartingTopConstant
                     self.view.layoutIfNeeded()
@@ -157,7 +157,7 @@ class BottomSheetViewController: UIViewController{
             }
             if velocity.y > 1500 {
                 hideBottomSheet()
-            return
+                return
             }
         default :
             break

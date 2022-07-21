@@ -7,7 +7,16 @@
 
 import UIKit
 
-class FindTopicViewController: BottomSheetViewController, ContainsButton{
+class FindTopicViewController: BottomSheetViewController {
+
+    private lazy var buttonView : UIButton = {
+        makeButtonView()
+    }()
+    
+    //MARK: - override from BottomSheetViewController
+    
+    override var defaultHeight: CGFloat {400}
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,30 +34,28 @@ class FindTopicViewController: BottomSheetViewController, ContainsButton{
         super.setupLayout()
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonView.bottomAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 40),
+            buttonView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 20),
             buttonView.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor, constant: -20)
         ])
-        
     }
     
+}
+
+
+//MARK: - CotainsButtonProtocol
+
+extension FindTopicViewController : ContainsButton {
     
-    var buttonView: UIButton = {
+    func makeButtonView() -> UIButton {
         let closedButton = UIButton(type: .system)
         closedButton.backgroundColor = .black
-        closedButton.layer.masksToBounds = true
-        print(closedButton.frame.width)
-        closedButton.layer.cornerRadius = closedButton.frame.width / 2
+        closedButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        closedButton.layer.cornerRadius = closedButton.bounds.size.width / 2
         return closedButton
-    }()
+    }
 
-    
-    
-    func buttonClosed() {
+    @objc func buttonClosed() {
         hideBottomSheet()
         print("button")
     }
-    
-    
-    
-
 }
