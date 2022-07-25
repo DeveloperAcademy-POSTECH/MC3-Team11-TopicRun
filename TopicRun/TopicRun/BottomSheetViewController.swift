@@ -13,17 +13,17 @@ class BottomSheetViewController: UIViewController{
     
     private lazy var bottomSheetPanStartingTopConstant : CGFloat = bottomSheetViewTopConstraint.constant
     
-    private let dimmedView : UIView = {
+    let dimmedView : UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
         return view
     }()
     
-    private let indicatorView : UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0.745, green: 0.749, blue: 0.749, alpha: 1)
-        view.layer.cornerRadius = 3
-        return view
+    var indicatorView : UIView = {
+    let view = UIView()
+    view.backgroundColor = UIColor(red: 0.745, green: 0.749, blue: 0.749, alpha: 1)
+    view.layer.cornerRadius = 3
+    return view
     }()
     
     let bottomSheetView : UIView = {
@@ -59,7 +59,8 @@ class BottomSheetViewController: UIViewController{
         showBottomSheet()
 
     }
-    
+//MARK: - setup UI and Layout
+
     func setupUI(){
         view.addSubview(dimmedView)
         view.addSubview(bottomSheetView)
@@ -100,6 +101,8 @@ class BottomSheetViewController: UIViewController{
         ])
     }
     
+//MARK: - show and hide BottomSheet
+
     private func showBottomSheet(){
         let safeAreaHeight : CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding : CGFloat = view.safeAreaInsets.bottom
@@ -114,7 +117,6 @@ class BottomSheetViewController: UIViewController{
     func hideBottomSheet(){
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding = view.safeAreaInsets.bottom
-        
         bottomSheetViewTopConstraint.constant = safeAreaHeight + bottomPadding
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
@@ -126,8 +128,9 @@ class BottomSheetViewController: UIViewController{
             }
         }
     }
-    
-    @objc private func dimmedViewTapped(_ tapRecognizer : UITapGestureRecognizer) {
+//MARK: - GestureRecognizer
+
+    @objc func dimmedViewTapped(_ tapRecognizer : UITapGestureRecognizer) {
         print("dimmed!")
         hideBottomSheet()
     }
