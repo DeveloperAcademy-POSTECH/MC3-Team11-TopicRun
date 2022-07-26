@@ -8,19 +8,22 @@
 import UIKit
 
 class FindTopicViewController: BottomSheetViewController {
+    
 //MARK: - determining defaultHeight of bottomSheetView
 
     override var defaultHeight: CGFloat {196}
     
 //MARK: - Create View
-
+    
+//  Xmark
     let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .semibold)
     lazy var xmark = UIImage(systemName: "xmark", withConfiguration: config)
-    
-    private lazy var closedButton : UIView = {makeButtonView()}()
     private lazy var xmarkView = UIImageView.init(image: xmark)
     
-    private lazy var nextButton : UIButton = {
+// Button
+    private lazy var closedButton: UIView = {makeButtonView()}()
+    
+    private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 20
         button.setTitle("Run!", for: .normal)
@@ -33,8 +36,8 @@ class FindTopicViewController: BottomSheetViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    private lazy var textLabel : UILabel = {
+// TextLabel
+    private lazy var textLabel: UILabel = {
         let text = UILabel()
         text.tintColor = .black
         text.textAlignment = .center
@@ -66,14 +69,15 @@ class FindTopicViewController: BottomSheetViewController {
     
     override func setupLayout() {
         super.setupLayout()
-        // closedButton layout
+        
+//      closedButton layout
         NSLayoutConstraint.activate([
             closedButton.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 16),
             closedButton.heightAnchor.constraint(equalToConstant: closedButton.frame.width),
             closedButton.widthAnchor.constraint(equalToConstant: closedButton.frame.height),
             closedButton.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor, constant: -16)
         ])
-        // xmarkView layout
+//      xmarkView layout
         xmarkView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             xmarkView.centerXAnchor.constraint(equalTo: closedButton.centerXAnchor),
@@ -91,16 +95,12 @@ class FindTopicViewController: BottomSheetViewController {
             nextButton.heightAnchor.constraint(equalToConstant: nextButton.frame.height),
             nextButton.widthAnchor.constraint(equalToConstant: nextButton.frame.width),
             nextButton.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
-            
-        
         ])
-        
     }
-    
 }
 
 extension FindTopicViewController {
-    @objc private func showNextView(){
+    @objc private func showNextView() {
         let bottomSheetVC = HeartBeatViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         self.present(bottomSheetVC, animated: false, completion: nil)

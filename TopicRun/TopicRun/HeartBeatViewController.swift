@@ -10,6 +10,7 @@ import UIKit
 class HeartBeatViewController: BottomSheetViewController {
     
     override var defaultHeight: CGFloat {275}
+    
     private lazy var stopButton : UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 20
@@ -24,23 +25,17 @@ class HeartBeatViewController: BottomSheetViewController {
         return button
     }()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        dimmedView.removeFromSuperview()
         stopButton.addTarget(self, action: #selector(stopHeartBeat), for: .touchUpInside)
-        // Do any additional setup after loading the view.
     }
-//    override func hideBottomSheet() {
-//        if self.presentingViewController?.presentingViewController != nil{
-//            self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
-//        }
-//    }
+    
     override func setupUI() {
         super.setupUI()
         bottomSheetView.addSubview(stopButton)
     }
+    
     override func setupLayout() {
         super.setupLayout()
         NSLayoutConstraint.activate([
@@ -50,18 +45,9 @@ class HeartBeatViewController: BottomSheetViewController {
             stopButton.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
     }
+    
     override func bottomSheetViewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

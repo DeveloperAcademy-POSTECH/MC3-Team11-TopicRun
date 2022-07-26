@@ -7,26 +7,27 @@
 
 import UIKit
 
-class BottomSheetViewController: UIViewController{
+class BottomSheetViewController: UIViewController {
     
-    var defaultHeight : CGFloat {300}
+    var defaultHeight: CGFloat {300}
     
-    private lazy var bottomSheetPanStartingTopConstant : CGFloat = bottomSheetViewTopConstraint.constant
+    private lazy var bottomSheetPanStartingTopConstant: CGFloat = bottomSheetViewTopConstraint.constant
     
-    let dimmedView : UIView = {
+    let dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
         return view
     }()
     
-    var indicatorView : UIView = {
+    var indicatorView: UIView = {
+        
     let view = UIView()
     view.backgroundColor = UIColor(red: 0.745, green: 0.749, blue: 0.749, alpha: 1)
     view.layer.cornerRadius = 3
     return view
     }()
     
-    let bottomSheetView : UIView = {
+    let bottomSheetView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.984447062, green: 0.9844469428, blue: 0.9844469428, alpha: 1)
         view.layer.cornerRadius = 10
@@ -36,7 +37,7 @@ class BottomSheetViewController: UIViewController{
     }()
     
     // 강제 언래핑
-    private var bottomSheetViewTopConstraint : NSLayoutConstraint!
+    private var bottomSheetViewTopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,9 +104,9 @@ class BottomSheetViewController: UIViewController{
     
 //MARK: - show and hide BottomSheet
 
-    private func showBottomSheet(){
-        let safeAreaHeight : CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
-        let bottomPadding : CGFloat = view.safeAreaInsets.bottom
+    private func showBottomSheet() {
+        let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
+        let bottomPadding: CGFloat = view.safeAreaInsets.bottom
         
         bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - defaultHeight
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
@@ -114,12 +115,12 @@ class BottomSheetViewController: UIViewController{
         }, completion: nil)
     }
     
-    func hideBottomSheet(){
+    func hideBottomSheet() {
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         let bottomPadding = view.safeAreaInsets.bottom
         bottomSheetViewTopConstraint.constant = safeAreaHeight + bottomPadding
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.dimmedView.alpha = 0.0
             self.view.layoutIfNeeded()
         }) { _ in
@@ -149,8 +150,7 @@ class BottomSheetViewController: UIViewController{
             
         case .ended:
             if bottomSheetView.frame.height > bottomSheetPanStartingTopConstant * 0.125{
-                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-                    self.bottomSheetViewTopConstraint.constant = self.bottomSheetPanStartingTopConstant
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {                    self.bottomSheetViewTopConstraint.constant = self.bottomSheetPanStartingTopConstant
                     self.view.layoutIfNeeded()
                 }, completion: nil)
 
