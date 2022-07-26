@@ -56,10 +56,10 @@
         <!--MapStoryBoard-->
         <scene sceneID="CA7-iL-Ghh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3t3-YL-fJC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MapStoryBoard" id="XC1-hH-PKg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="r6k-3r-2eu"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3t3-YL-fJC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1286" y="204"/>
         </scene>
