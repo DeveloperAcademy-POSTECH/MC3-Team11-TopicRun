@@ -17,6 +17,10 @@
 		36DF532028852ED10099CD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF531E28852ED10099CD64 /* Main.storyboard */; };
 		36DF532228852ED20099CD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532128852ED20099CD64 /* Assets.xcassets */; };
 		36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532328852ED20099CD64 /* LaunchScreen.storyboard */; };
+		CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */; };
+		CF9D5CD1288FB19B00A3DA31 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */; };
+		CFC82CBF2889251C00555C1D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC82CBE2889251C00555C1D /* PaddingLabel.swift */; };
+		CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC82CC0288989F200555C1D /* MapMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		36DF532128852ED20099CD64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DF532428852ED20099CD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36DF532628852ED20099CD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
+		CFC82CBE2889251C00555C1D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		CFC82CC0288989F200555C1D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +80,13 @@
 				0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */,
 				0C2F79EC2887F53900D97093 /* Protocol.swift */,
 				36DF531E28852ED10099CD64 /* Main.storyboard */,
+				CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */,
 				36DF532128852ED20099CD64 /* Assets.xcassets */,
 				36DF532328852ED20099CD64 /* LaunchScreen.storyboard */,
 				36DF532628852ED20099CD64 /* Info.plist */,
+				CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */,
+				CFC82CC0288989F200555C1D /* MapMarker.swift */,
+				CFC82CBE2889251C00555C1D /* PaddingLabel.swift */,
 			);
 			path = TopicRun;
 			sourceTree = "<group>";
@@ -139,6 +151,7 @@
 			files = (
 				36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */,
 				36DF532228852ED20099CD64 /* Assets.xcassets in Resources */,
+				CF9D5CD1288FB19B00A3DA31 /* MapStoryBoard.storyboard in Resources */,
 				36DF532028852ED10099CD64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,10 +166,13 @@
 				0C2F79EB28858CB100D97093 /* BottomSheetViewController.swift in Sources */,
 				0C350494288E36D50092A6D6 /* HeartBeatViewController.swift in Sources */,
 				0CC3C4592888319C0020CBBE /* FindTopicViewController.swift in Sources */,
+				CFC82CBF2889251C00555C1D /* PaddingLabel.swift in Sources */,
 				36DF531D28852ED10099CD64 /* ViewController.swift in Sources */,
+				CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */,
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
 				0C2F79ED2887F53900D97093 /* Protocol.swift in Sources */,
+				CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +319,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DHGYXG73DB;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"하세요.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"안녕\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -331,9 +349,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DHGYXG73DB;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"하세요.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"안녕\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
