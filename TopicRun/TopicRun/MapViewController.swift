@@ -11,7 +11,6 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var userLocationButton: UIButton!
     @IBOutlet var backButton: UIButton!
@@ -23,11 +22,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func goUserLocation(_ sender: Any) {
         
         mapView.centerToLocation(locationManager.location ?? CLLocation(latitude: 36.0138857, longitude: 129.3231836), regionRadius: mapView.radius)
-        
-        
     }
-    let locationManager = CLLocationManager()
     
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var label: PaddingLabel!
     
@@ -70,10 +67,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.addAnnotation(secondPlace)
         
         // back button hide.
-        //        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.leftBarButtonItems = []
         self.navigationItem.hidesBackButton = true
-        //         Do any additional setup after loading the view.
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -83,18 +78,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         annotationView.image = markerImage
             return annotationView
         }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }
 
 
