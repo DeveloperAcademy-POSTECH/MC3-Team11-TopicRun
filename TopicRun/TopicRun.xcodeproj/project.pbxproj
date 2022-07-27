@@ -322,8 +322,8 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"하세요.\"";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"안녕\"";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치가 필요합니다..\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"지도를 사용하기 위해 위치가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -352,8 +352,8 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"하세요.\"";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"안녕\"";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치가 필요합니다..\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"지도를 사용하기 위해 위치가 필요합니다.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
