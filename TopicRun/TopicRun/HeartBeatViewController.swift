@@ -6,9 +6,8 @@
 //
 
 import UIKit
-
+import Combine
 class HeartBeatViewController: BottomSheetViewController {
-    
     override var defaultHeight: CGFloat {275}
     var bpm: Int {60}
     private lazy var stopButton : UIButton = {
@@ -50,18 +49,12 @@ class HeartBeatViewController: BottomSheetViewController {
         super.viewDidLoad()
         dimmedView.removeFromSuperview()
         indicatorView.removeFromSuperview()
-        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(stopHeartBeat(_:)))
-//        let touch = UILongPressGestureRecognizer(target: self, action: #selector(touchStopButton(_:)))
-//        touch.delaysTouchesEnded = false
-//        touch.delaysTouchesBegan = false
-        longpress.minimumPressDuration = 0
+        let longpress = MyLongPressGesture(target: self, action: #selector(stopLong(_:)))
         longpress.delaysTouchesBegan = false
         longpress.delaysTouchesEnded = false
-//        stopButton.addTarget(self, action: #selector(touchStopButton), for: .touchUpInside)
-//        touch.minimumPressDuration = 2
         stopButton.addGestureRecognizer(longpress)
-//        stopButton.addGestureRecognizer(touch)
-        
+        longpress.minimumPressDuration = 1
+        stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
     }
     
     override func setupUI() {
@@ -94,35 +87,30 @@ class HeartBeatViewController: BottomSheetViewController {
     
     override func bottomSheetViewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
     }
-
+    @objc private func alert() {
+        let customVC = CustomAlertViewController()
+        customVC.modalPresentationStyle = .overFullScreen
+        self.present(customVC, animated: false, completion: nil)
+    }
 }
 
 extension HeartBeatViewController {
-    @objc private func stopHeartBeat(_ gesture : UILongPressGestureRecognizer) {
-        switch gesture.state {
-        case .possible:
-            print("touch")
-        case .began :
-            print("touch")
-        case .changed :
-            print("change")
-        
-        case .ended :
-            //stop
-            print("end")
-            hideBottomSheet()
-
-        case .cancelled:
-            print("cancel")
-        case .failed:
-            print("fail")
-        
-        default:
-            print("default")
-        }//gesture.state
-    }//stopHeartBeat
-    @objc private func touchStopButton() {
-        print("Start")
+    @objc private func stopLong(_ gesture : MyLongPressGesture) {
+        hideBottomSheet()
     }
+}
 
+class MyLongPressGesture : UILongPressGestureRecognizer {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesBegan(touches, with: event)
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
+            self.view?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: nil)
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesEnded(touches, with: event)
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
+            self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+    }
 }
