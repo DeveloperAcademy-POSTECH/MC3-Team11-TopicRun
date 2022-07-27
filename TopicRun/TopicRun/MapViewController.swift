@@ -11,9 +11,14 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var runButton: UIButton!
+    @IBOutlet weak var willRunView: UIView!
+    @IBOutlet weak var didRunView: UIView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var userLocationButton: UIButton!
     @IBOutlet var backButton: UIButton!
+    
+    private var isStart = false
     
     @IBAction func goBack(_ sender: Any) {
         // 뒤로 가기 버튼
@@ -29,8 +34,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     let locationManager = CLLocationManager()
-    
-    @IBOutlet weak var label: PaddingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,21 +54,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), identifier: "second")
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), identifier: "first")
         
-        // 패딩 테두리 선 추가
-        label.layer.borderWidth = 1
-        
-        // 글자 배경 색깔
-        label.layer.borderColor = UIColor.white.cgColor
-        
-        //Setting the round (optional)
-        // 글자 테두리 둥글게
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = label.frame.height / 2
-        
-        //Setting the padding label
-        // 패딩 주는 정도
-        label.edgeInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
         // 위치 권한 사용자에게 묻기.
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -79,7 +67,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
             alert.addAction(ok)
             present(alert, animated: true)
-//            mapView.showsUserLocation = false
+            //            mapView.showsUserLocation = false
         }
         
         // 지도 위치 권한 확인
@@ -102,6 +90,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             break
         }
         
+        if isStart {
+            willRunView.isHidden = true
+            didRunView.isHidden = false
+        } else {
+            willRunView.isHidden = false
+            didRunView.isHidden = true
+        }
+        
         // 처음 지도 화면 이동.
         mapView.centerToLocation(locationManager.location ?? CLLocation(latitude: 36.0138857, longitude: 129.3231836))
         
@@ -116,12 +112,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String) {
-        print("a")
+        
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             // 위치에 어느정도 근접하면 작동할지 설정.
             let maxDistance = CLLocationDistance(1)
-
-//            let maxDistance = locationManager.maximumRegionMonitoringDistance
+            
+            //            let maxDistance = locationManager.maximumRegionMonitoringDistance
             // 36.014686
             // 129.325384
             let region = CLCircularRegion(center: center, radius: maxDistance, identifier: identifier)
@@ -149,9 +145,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // 마커들 확인.
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         if annotation is MKUserLocation {
-            // 사용자 용 마커
-//            let pin = mapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
-//            pin.pinTintColor = UIColor.purple
+            // 사용자 용 마커 핀
+            //            let pin = mapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            //            pin.pinTintColor = UIColor.purple
+            
+            // 사용자 용 마커 핀
             let markerImage = UIImage(named: "userIcon")
             annotationView.image = markerImage
             
@@ -163,13 +161,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return annotationView
     }
-    
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        let alert = UIAlertController(title: "알림", message: "알림창 내용", preferredStyle: .alert)
-    //        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-    //        alert.addAction(ok)
-    //        present(alert, animated: true)
-    //    }
+    @IBAction func clickRunButton(_ sender: Any) {
+        
+        isStart = true
+        
+        willRunView.isHidden = true
+        didRunView.isHidden = false
+        
+    }
+    @IBAction func clickStopButton(_ sender: Any) {
+        
+        isStart = false
+
+        willRunView.isHidden = false
+        didRunView.isHidden = true
+        
+    }
 }
 
 
