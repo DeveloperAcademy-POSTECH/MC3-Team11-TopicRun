@@ -20,10 +20,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
     @IBAction func goUserLocation(_ sender: Any) {
         // 현재 위치 버튼 마지막 위치 정보가 없으면 36.0138857, 129.32318336으로 이동. regionRadius는 지도 확대 정도.
         mapView.centerToLocation(locationManager.location ?? CLLocation(latitude: 36.0138857, longitude: 129.3231836), regionRadius: mapView.radius)
     }
+    
     
     let locationManager = CLLocationManager()
     
@@ -36,7 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // 첫 번째 마커
         mapView.delegate = self
-        let firstPlace = MapMarker(keyword: ["건강","운세","돈"], subject: "건강 운세로 돈을 벌어라.", coordinate: CLLocationCoordinate2D(latitude: 36.014986, longitude: 129.325184), isVisit: false)
+        let firstPlace = MapMarker(keyword: ["건강","운세","돈"], subject: "건강 운세로 돈을 벌어라.", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false)
         
         //36.012986
         //129.325784
@@ -46,10 +49,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // 지오펜스 설정.
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), identifier: "second")
-        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.014986, longitude: 129.325184), identifier: "first")
-//        monitorRegionAtLocation(center: locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 36.0138857, longitude: 129.3231836), identifier: "Test")
-        
-        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.014686, longitude: 129.325384), identifier: "Test")
+        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), identifier: "first")
         
         // 패딩 테두리 선 추가
         label.layer.borderWidth = 1
@@ -119,7 +119,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print("a")
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             // 위치에 어느정도 근접하면 작동할지 설정.
-            let maxDistance = locationManager.maximumRegionMonitoringDistance
+            let maxDistance = CLLocationDistance(1)
+
+//            let maxDistance = locationManager.maximumRegionMonitoringDistance
             // 36.014686
             // 129.325384
             let region = CLCircularRegion(center: center, radius: maxDistance, identifier: identifier)
@@ -135,7 +137,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let region = region as? CLCircularRegion {
             let identifier = region.identifier
             //            triggerTaskAssociateWithRegionIdentifier(regionID: identifier)
-            let alert = UIAlertController(title: "알림", message: "알림창 내용 \(identifier)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "들어감", message: "들어감 내용 \(identifier) \(mapView.userLocation.coordinate)", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
             present(alert, animated: true)
