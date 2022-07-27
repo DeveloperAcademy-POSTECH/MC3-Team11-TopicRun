@@ -11,6 +11,7 @@
 		0C2F79ED2887F53900D97093 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F79EC2887F53900D97093 /* Protocol.swift */; };
 		0C350494288E36D50092A6D6 /* HeartBeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */; };
 		0CC3C4592888319C0020CBBE /* FindTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */; };
+		0CE1784A28905E4700D63B2D /* FinalBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */; };
 		36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531828852ED10099CD64 /* AppDelegate.swift */; };
 		36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531A28852ED10099CD64 /* SceneDelegate.swift */; };
 		36DF531D28852ED10099CD64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531C28852ED10099CD64 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		0C2F79EC2887F53900D97093 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatViewController.swift; sourceTree = "<group>"; };
 		0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTopicViewController.swift; sourceTree = "<group>"; };
+		0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalBottomViewController.swift; sourceTree = "<group>"; };
 		36DF531528852ED10099CD64 /* TopicRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopicRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DF531828852ED10099CD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DF531A28852ED10099CD64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				0C2F79EA28858CB100D97093 /* BottomSheetViewController.swift */,
 				0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */,
 				0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */,
+				0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */,
 				0C2F79EC2887F53900D97093 /* Protocol.swift */,
 				36DF531E28852ED10099CD64 /* Main.storyboard */,
 				CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */,
@@ -172,6 +175,7 @@
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
 				0C2F79ED2887F53900D97093 /* Protocol.swift in Sources */,
+				0CE1784A28905E4700D63B2D /* FinalBottomViewController.swift in Sources */,
 				CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

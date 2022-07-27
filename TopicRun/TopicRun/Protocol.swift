@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-@objc protocol ContainsButton : AnyObject{
+@objc protocol ContainsButton {
     func makeButtonView() -> UIView
     @objc func buttonClosed()
 }
