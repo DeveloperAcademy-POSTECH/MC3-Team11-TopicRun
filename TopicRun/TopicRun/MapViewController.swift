@@ -47,7 +47,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // 지오펜스 설정.
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), identifier: "second")
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.014986, longitude: 129.325184), identifier: "first")
-        monitorRegionAtLocation(center: locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 36.0138857, longitude: 129.3231836), identifier: "Test")
+//        monitorRegionAtLocation(center: locationManager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 36.0138857, longitude: 129.3231836), identifier: "Test")
+        
+        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.014686, longitude: 129.325384), identifier: "Test")
         
         // 패딩 테두리 선 추가
         label.layer.borderWidth = 1
@@ -133,7 +135,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let region = region as? CLCircularRegion {
             let identifier = region.identifier
             //            triggerTaskAssociateWithRegionIdentifier(regionID: identifier)
-            let alert = UIAlertController(title: "알림", message: "알림창 내용", preferredStyle: .alert)
+            let alert = UIAlertController(title: "알림", message: "알림창 내용 \(identifier)", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
             present(alert, animated: true)
