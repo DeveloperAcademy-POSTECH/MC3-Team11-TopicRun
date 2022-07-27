@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import HealthKit
+import WatchConnectivity
 
 class StartPageViewController: UIViewController, UITextFieldDelegate {
     
