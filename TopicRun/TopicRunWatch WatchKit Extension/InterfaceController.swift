@@ -29,7 +29,7 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        runWorkOut()
         receiveMessage()
     }
     
@@ -62,10 +62,21 @@ class InterfaceController: WKInterfaceController {
         DispatchQueue.main.async {
             
             let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
-            let value = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
-            self.heartRateLabel.setText("\(Int(value!)) BPM")
-            print(value!)
+            self.heartRateValue = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
+            self.heartRateLabel.setText("\(Int(self.heartRateValue!)) BPM")
+
             
+            // 3: Session property를 통해 communicatoin 메소드 구현, counterpart(iPhone)의 응답 관리
+            if self.isReachable() {
+                do {
+                    print(self.heartRateValue)
+                    try self.session.updateApplicationContext(["request":self.heartRateValue ?? "- -"])
+                } catch {
+                    print("error")
+                }
+            } else {
+                print("iPhone is not reachable…!")
+            }
         }
     }
     
