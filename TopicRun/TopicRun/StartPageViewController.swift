@@ -83,7 +83,9 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func topicRunButtonPressed(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         
+        present(vc, animated: true)
     }
     
     
