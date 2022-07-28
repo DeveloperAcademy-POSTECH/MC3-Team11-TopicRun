@@ -123,6 +123,5 @@ extension FinalBottomViewController: ContainsButton{
 
     @objc func buttonClosed() {
         hideBottomSheet()
-        print("button")
     }
 }

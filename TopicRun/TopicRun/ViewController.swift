@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     }
 
     @objc func buttonTapped(){
-        print("Click")
         let bottomSheetVC = FindTopicViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         self.present(bottomSheetVC, animated: false, completion: nil)

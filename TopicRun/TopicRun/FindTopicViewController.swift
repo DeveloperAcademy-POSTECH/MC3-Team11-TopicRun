@@ -122,6 +122,5 @@ extension FindTopicViewController: ContainsButton {
 
     @objc func buttonClosed() {
         hideBottomSheet()
-        print("button")
     }
 }

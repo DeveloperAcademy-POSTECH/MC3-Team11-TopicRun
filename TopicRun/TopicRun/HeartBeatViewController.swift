@@ -140,13 +140,11 @@ extension HeartBeatViewController {
     }
     
     @objc private func alert() {
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
-            self.alertView.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
             self.alertView.alpha = 1
         }, completion: nil)
         UIView.animate(withDuration: 0.4, delay: 1, options: .curveEaseInOut, animations: {
-                self.alertView.layoutIfNeeded()
-                self.alertView.alpha = 0
+            self.alertView.alpha = 0
             }, completion: nil)
     }
     
