@@ -12,16 +12,77 @@
 		0C350494288E36D50092A6D6 /* HeartBeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */; };
 		0CC3C4592888319C0020CBBE /* FindTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */; };
 		0CE1784A28905E4700D63B2D /* FinalBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */; };
+		054F49302891289D004FF038 /* AnimatedIphoneHearts.sks in Resources */ = {isa = PBXBuildFile; fileRef = 054F492F2891289D004FF038 /* AnimatedIphoneHearts.sks */; };
+		054F493228913029004FF038 /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F493128913029004FF038 /* SessionHandler.swift */; };
+		05756DC32887D0AE0006C2FD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05756DC12887D0AE0006C2FD /* Interface.storyboard */; };
+		05756DC52887D0AF0006C2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05756DC42887D0AF0006C2FD /* Assets.xcassets */; };
+		05756DCB2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05756DCA2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05756DD02887D0AF0006C2FD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756DCF2887D0AF0006C2FD /* InterfaceController.swift */; };
+		05756DD22887D0AF0006C2FD /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756DD12887D0AF0006C2FD /* ExtensionDelegate.swift */; };
+		05756DD42887D0AF0006C2FD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756DD32887D0AF0006C2FD /* NotificationController.swift */; };
+		05756DD82887D0B00006C2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05756DD72887D0B00006C2FD /* Assets.xcassets */; };
+		05756DDD2887D0B00006C2FD /* TopicRunWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05756DBF2887D0AE0006C2FD /* TopicRunWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05E832F6288683E600F78EE4 /* StartPageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E832F5288683E600F78EE4 /* StartPageView.storyboard */; };
+		05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E832F72886840600F78EE4 /* StartPageViewController.swift */; };
 		36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531828852ED10099CD64 /* AppDelegate.swift */; };
 		36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531A28852ED10099CD64 /* SceneDelegate.swift */; };
 		36DF531D28852ED10099CD64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF531C28852ED10099CD64 /* ViewController.swift */; };
 		36DF532028852ED10099CD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF531E28852ED10099CD64 /* Main.storyboard */; };
 		36DF532228852ED20099CD64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532128852ED20099CD64 /* Assets.xcassets */; };
 		36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532328852ED20099CD64 /* LaunchScreen.storyboard */; };
+
 		CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */; };
 		CF9D5CD1288FB19B00A3DA31 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */; };
 		CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC82CC0288989F200555C1D /* MapMarker.swift */; };
+		CCAA3B682887C6E000E29E3B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAA3B672887C6E000E29E3B /* HealthKit.framework */; };
+		CCAA3C262887D7C300E29E3B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAA3C252887D7C300E29E3B /* HealthKit.framework */; };
+		CCAA3C282887DA6900E29E3B /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
+		CCC27FF6289113F500468C35 /* AnimatedHearts.sks in Resources */ = {isa = PBXBuildFile; fileRef = CCC27FF5289113F500468C35 /* AnimatedHearts.sks */; };
+		CCC27FF9289116BD00468C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05756DC42887D0AF0006C2FD /* Assets.xcassets */; };
+		CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05756DCC2887D0AF0006C2FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36DF530D28852ED10099CD64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05756DC92887D0AF0006C2FD;
+			remoteInfo = "TopicRunWatch WatchKit Extension";
+		};
+		05756DDB2887D0B00006C2FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36DF530D28852ED10099CD64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05756DBE2887D0AE0006C2FD;
+			remoteInfo = TopicRunWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05756DDE2887D0B00006C2FD /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				05756DDD2887D0B00006C2FD /* TopicRunWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05756DE12887D0B00006C2FD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05756DCB2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C2F79EA28858CB100D97093 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +90,22 @@
 		0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBeatViewController.swift; sourceTree = "<group>"; };
 		0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTopicViewController.swift; sourceTree = "<group>"; };
 		0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalBottomViewController.swift; sourceTree = "<group>"; };
+		054F492F2891289D004FF038 /* AnimatedIphoneHearts.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimatedIphoneHearts.sks; sourceTree = "<group>"; };
+		054F493128913029004FF038 /* SessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
+		05756DBF2887D0AE0006C2FD /* TopicRunWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopicRunWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05756DC22887D0AE0006C2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		05756DC42887D0AF0006C2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05756DCA2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TopicRunWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05756DCF2887D0AF0006C2FD /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		05756DD12887D0AF0006C2FD /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		05756DD32887D0AF0006C2FD /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		05756DD72887D0B00006C2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05756DD92887D0B00006C2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05756DDA2887D0B00006C2FD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		05756DE62887D0CD0006C2FD /* TopicRunDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopicRunDebug.entitlements; sourceTree = "<group>"; };
+		05E832F5288683E600F78EE4 /* StartPageView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartPageView.storyboard; sourceTree = "<group>"; };
+		05E832F72886840600F78EE4 /* StartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
+		05FA878C2887E57700BDC007 /* TopicRunWatch WatchKit ExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopicRunWatch WatchKit ExtensionDebug.entitlements"; sourceTree = "<group>"; };
 		36DF531528852ED10099CD64 /* TopicRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopicRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DF531828852ED10099CD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DF531A28852ED10099CD64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,24 +117,68 @@
 		CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
 		CFC82CC0288989F200555C1D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
+		CCAA3B652887C6E000E29E3B /* TopicRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopicRun.entitlements; sourceTree = "<group>"; };
+		CCAA3B672887C6E000E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CCAA3C242887D7C300E29E3B /* TopicRunWatch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopicRunWatch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		CCAA3C252887D7C300E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartKitAutorization.swift; path = "TopicRunWatch WatchKit Extension/HeartKitAutorization.swift"; sourceTree = SOURCE_ROOT; };
+		CCC27FF5289113F500468C35 /* AnimatedHearts.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimatedHearts.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05756DC72887D0AF0006C2FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCAA3C262887D7C300E29E3B /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36DF531228852ED10099CD64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAA3B682887C6E000E29E3B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05756DC02887D0AE0006C2FD /* TopicRunWatch */ = {
+			isa = PBXGroup;
+			children = (
+				05756DC12887D0AE0006C2FD /* Interface.storyboard */,
+				05756DC42887D0AF0006C2FD /* Assets.xcassets */,
+			);
+			path = TopicRunWatch;
+			sourceTree = "<group>";
+		};
+		05756DCE2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05FA878C2887E57700BDC007 /* TopicRunWatch WatchKit ExtensionDebug.entitlements */,
+				CCAA3C242887D7C300E29E3B /* TopicRunWatch WatchKit Extension.entitlements */,
+				05756DCF2887D0AF0006C2FD /* InterfaceController.swift */,
+				05756DD12887D0AF0006C2FD /* ExtensionDelegate.swift */,
+				05756DD32887D0AF0006C2FD /* NotificationController.swift */,
+				CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */,
+				05756DD72887D0B00006C2FD /* Assets.xcassets */,
+				05756DD92887D0B00006C2FD /* Info.plist */,
+				05756DDA2887D0B00006C2FD /* PushNotificationPayload.apns */,
+				CCC27FF5289113F500468C35 /* AnimatedHearts.sks */,
+			);
+			path = "TopicRunWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
 		36DF530C28852ED10099CD64 = {
 			isa = PBXGroup;
 			children = (
 				36DF531728852ED10099CD64 /* TopicRun */,
+				05756DC02887D0AE0006C2FD /* TopicRunWatch */,
+				05756DCE2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */,
 				36DF531628852ED10099CD64 /* Products */,
+				CCAA3B662887C6E000E29E3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				36DF531528852ED10099CD64 /* TopicRun.app */,
+				05756DBF2887D0AE0006C2FD /* TopicRunWatch.app */,
+				05756DCA2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +195,8 @@
 		36DF531728852ED10099CD64 /* TopicRun */ = {
 			isa = PBXGroup;
 			children = (
+				05756DE62887D0CD0006C2FD /* TopicRunDebug.entitlements */,
+				CCAA3B652887C6E000E29E3B /* TopicRun.entitlements */,
 				36DF531828852ED10099CD64 /* AppDelegate.swift */,
 				36DF531A28852ED10099CD64 /* SceneDelegate.swift */,
 				36DF531C28852ED10099CD64 /* ViewController.swift */,
@@ -87,13 +212,63 @@
 				36DF532628852ED20099CD64 /* Info.plist */,
 				CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */,
 				CFC82CC0288989F200555C1D /* MapMarker.swift */,
+				05E832F5288683E600F78EE4 /* StartPageView.storyboard */,
+				05E832F72886840600F78EE4 /* StartPageViewController.swift */,
+				054F493128913029004FF038 /* SessionHandler.swift */,
+				36DF532128852ED20099CD64 /* Assets.xcassets */,
+				36DF532328852ED20099CD64 /* LaunchScreen.storyboard */,
+				36DF532628852ED20099CD64 /* Info.plist */,
+				054F492F2891289D004FF038 /* AnimatedIphoneHearts.sks */,
 			);
 			path = TopicRun;
+			sourceTree = "<group>";
+		};
+		CCAA3B662887C6E000E29E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCAA3C252887D7C300E29E3B /* HealthKit.framework */,
+				CCAA3B672887C6E000E29E3B /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		05756DBE2887D0AE0006C2FD /* TopicRunWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05756DE52887D0B00006C2FD /* Build configuration list for PBXNativeTarget "TopicRunWatch" */;
+			buildPhases = (
+				05756DBD2887D0AE0006C2FD /* Resources */,
+				05756DE12887D0B00006C2FD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05756DCD2887D0AF0006C2FD /* PBXTargetDependency */,
+			);
+			name = TopicRunWatch;
+			productName = TopicRunWatch;
+			productReference = 05756DBF2887D0AE0006C2FD /* TopicRunWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		05756DC92887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05756DE42887D0B00006C2FD /* Build configuration list for PBXNativeTarget "TopicRunWatch WatchKit Extension" */;
+			buildPhases = (
+				05756DC62887D0AF0006C2FD /* Sources */,
+				05756DC72887D0AF0006C2FD /* Frameworks */,
+				05756DC82887D0AF0006C2FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TopicRunWatch WatchKit Extension";
+			productName = "TopicRunWatch WatchKit Extension";
+			productReference = 05756DCA2887D0AF0006C2FD /* TopicRunWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		36DF531428852ED10099CD64 /* TopicRun */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DF532928852ED20099CD64 /* Build configuration list for PBXNativeTarget "TopicRun" */;
@@ -101,10 +276,12 @@
 				36DF531128852ED10099CD64 /* Sources */,
 				36DF531228852ED10099CD64 /* Frameworks */,
 				36DF531328852ED10099CD64 /* Resources */,
+				05756DDE2887D0B00006C2FD /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05756DDC2887D0B00006C2FD /* PBXTargetDependency */,
 			);
 			name = TopicRun;
 			productName = TopicRun;
@@ -121,6 +298,12 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					05756DBE2887D0AE0006C2FD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					05756DC92887D0AF0006C2FD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					36DF531428852ED10099CD64 = {
 						CreatedOnToolsVersion = 13.4;
 					};
@@ -140,11 +323,32 @@
 			projectRoot = "";
 			targets = (
 				36DF531428852ED10099CD64 /* TopicRun */,
+				05756DBE2887D0AE0006C2FD /* TopicRunWatch */,
+				05756DC92887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		05756DBD2887D0AE0006C2FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05756DC52887D0AF0006C2FD /* Assets.xcassets in Resources */,
+				05756DC32887D0AE0006C2FD /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05756DC82887D0AF0006C2FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05756DD82887D0B00006C2FD /* Assets.xcassets in Resources */,
+				CCC27FF9289116BD00468C35 /* Assets.xcassets in Resources */,
+				CCC27FF6289113F500468C35 /* AnimatedHearts.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36DF531328852ED10099CD64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,13 +356,26 @@
 				36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */,
 				36DF532228852ED20099CD64 /* Assets.xcassets in Resources */,
 				CF9D5CD1288FB19B00A3DA31 /* MapStoryBoard.storyboard in Resources */,
+				054F49302891289D004FF038 /* AnimatedIphoneHearts.sks in Resources */,
 				36DF532028852ED10099CD64 /* Main.storyboard in Resources */,
+				05E832F6288683E600F78EE4 /* StartPageView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		05756DC62887D0AF0006C2FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05756DD42887D0AF0006C2FD /* NotificationController.swift in Sources */,
+				05756DD22887D0AF0006C2FD /* ExtensionDelegate.swift in Sources */,
+				CCAA3C282887DA6900E29E3B /* HeartKitAutorization.swift in Sources */,
+				05756DD02887D0AF0006C2FD /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36DF531128852ED10099CD64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,16 +386,40 @@
 				36DF531D28852ED10099CD64 /* ViewController.swift in Sources */,
 				CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */,
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
+				05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
 				0C2F79ED2887F53900D97093 /* Protocol.swift in Sources */,
 				0CE1784A28905E4700D63B2D /* FinalBottomViewController.swift in Sources */,
 				CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */,
+				CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */,
+				054F493228913029004FF038 /* SessionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		05756DCD2887D0AF0006C2FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05756DC92887D0AF0006C2FD /* TopicRunWatch WatchKit Extension */;
+			targetProxy = 05756DCC2887D0AF0006C2FD /* PBXContainerItemProxy */;
+		};
+		05756DDC2887D0B00006C2FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05756DBE2887D0AE0006C2FD /* TopicRunWatch */;
+			targetProxy = 05756DDB2887D0B00006C2FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		05756DC12887D0AE0006C2FD /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05756DC22887D0AE0006C2FD /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		36DF531E28852ED10099CD64 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -198,6 +439,128 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		05756DDF2887D0B00006C2FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		05756DE02887D0B00006C2FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		05756DE22887D0B00006C2FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TopicRunWatch WatchKit Extension/TopicRunWatch WatchKit ExtensionDebug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TopicRunWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TopicRunWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = TopicRunWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = TopicRunWatch_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		05756DE32887D0B00006C2FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TopicRunWatch WatchKit Extension/TopicRunWatch WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TopicRunWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TopicRunWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = TopicRunWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = TopicRunWatch_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		36DF532728852ED20099CD64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,16 +680,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRunDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DHGYXG73DB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TopicRun/Info.plist;
+
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치 권한이 필요합니다..\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"지도를 사용하기 위해 위치 권한이 필요합니다.\"";
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TopicRun/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = StartPageView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +702,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.San.TopicRun;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -347,16 +715,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRun.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DHGYXG73DB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치 권한이 필요합니다..\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"지도를 사용하기 위해 위치 권한이 필요합니다.\"";
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TopicRun/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to following Data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to following Data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = StartPageView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,8 +737,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.San.TopicRun;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -375,6 +749,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05756DE42887D0B00006C2FD /* Build configuration list for PBXNativeTarget "TopicRunWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05756DE22887D0B00006C2FD /* Debug */,
+				05756DE32887D0B00006C2FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05756DE52887D0B00006C2FD /* Build configuration list for PBXNativeTarget "TopicRunWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05756DDF2887D0B00006C2FD /* Debug */,
+				05756DE02887D0B00006C2FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		36DF531028852ED10099CD64 /* Build configuration list for PBXProject "TopicRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
