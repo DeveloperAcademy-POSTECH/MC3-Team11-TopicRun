@@ -679,7 +679,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRunDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
@@ -714,7 +714,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";

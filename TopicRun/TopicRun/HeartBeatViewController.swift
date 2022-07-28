@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Combine
+import AVFoundation
 class HeartBeatViewController: BottomSheetViewController {
 //MARK: - private 변수 생성
     //bpm 숫자
@@ -141,6 +141,7 @@ extension HeartBeatViewController {
     }
     
     @objc private func alert() {
+        UIDevice.vibrate()
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
             self.alertView.alpha = 1
         }, completion: nil)
@@ -152,6 +153,7 @@ extension HeartBeatViewController {
     @objc private func stopLong(_ gesture : MyLongPressGesture) {
         switch gesture.state {
         case.began:
+            UIDevice.vibrate()
             hideBottomSheet()
         default:
             return
@@ -175,3 +177,10 @@ class MyLongPressGesture : UILongPressGestureRecognizer {
         }, completion: nil)
     }
 }
+//MARK: - [extension 정의 실시 - UIDevice]
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+}
+
