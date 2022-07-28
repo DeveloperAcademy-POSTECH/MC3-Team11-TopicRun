@@ -12,7 +12,7 @@ class FindTopicViewController: BottomSheetViewController {
 //MARK: - determining defaultHeight of bottomSheetView
 
     override var defaultHeight: CGFloat {196}
-    
+    var keywordFined: String = ""
 //MARK: - Create View
     
 //  Xmark
@@ -41,7 +41,7 @@ class FindTopicViewController: BottomSheetViewController {
         let text = UILabel()
         text.tintColor = .black
         text.textAlignment = .center
-        text.text = "# 건강 # 스케줄"
+        text.text = "\(keywordFined)"
         text.font = UIFont(name: "Helvetica Neue", size: 24)
         text.font = .systemFont(ofSize: 24, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false

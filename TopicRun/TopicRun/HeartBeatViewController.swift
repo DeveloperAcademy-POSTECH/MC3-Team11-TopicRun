@@ -121,7 +121,7 @@ class HeartBeatViewController: BottomSheetViewController {
         let longpress = MyLongPressGesture(target: self, action: #selector(stopLong(_:)))
         longpress.delaysTouchesBegan = false
         longpress.delaysTouchesEnded = false
-        longpress.minimumPressDuration = 1
+        longpress.minimumPressDuration = 0.5
         stopButton.addGestureRecognizer(longpress)
         stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
         changeText()

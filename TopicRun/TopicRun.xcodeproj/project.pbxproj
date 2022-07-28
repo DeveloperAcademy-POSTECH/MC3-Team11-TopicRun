@@ -319,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DHGYXG73DB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치 권한이 필요합니다..\"";
@@ -349,7 +349,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DHGYXG73DB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"사용자의 위치를  지도에 표시하기 위해 위치 권한이 필요합니다..\"";
