@@ -109,7 +109,7 @@ extension FindTopicViewController {
 
 //MARK: - CotainsButtonProtocol
 
-extension FindTopicViewController : ContainsButton {
+extension FindTopicViewController: ContainsButton {
     
     func makeButtonView() -> UIView {
         let closedButton = UIView()
@@ -122,6 +122,5 @@ extension FindTopicViewController : ContainsButton {
 
     @objc func buttonClosed() {
         hideBottomSheet()
-        print("button")
     }
 }
