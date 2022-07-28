@@ -11,7 +11,7 @@
         <!--Map View Controller-->
         <scene sceneID="DS7-rP-r5J">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="1nk-6A-anL" customClass="MapViewController" customModule="TopicRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1nk-6A-anL" customClass="MapViewController" customModule="TopicRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gfu-aD-MRf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
