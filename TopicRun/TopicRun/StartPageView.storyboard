@@ -16,29 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startHeart" translatesAutoresizingMaskIntoConstraints="NO" id="xFc-Sj-R0B">
-                                <rect key="frame" x="145" y="432" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="HQv-nk-UNf"/>
-                                    <constraint firstAttribute="height" constant="100" id="zgr-TW-p3j"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pvz-Hp-MQF">
-                                <rect key="frame" x="152.33333333333334" y="543" width="85.666666666666657" height="56.333333333333371"/>
+                                <rect key="frame" x="152.33333333333334" y="565.66666666666663" width="85.666666666666657" height="33.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Z2-sV-alm">
-                                        <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="56.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-jw-2F9">
-                                        <rect key="frame" x="33.666666666666657" y="0.0" width="52" height="56.333333333333336"/>
+                                        <rect key="frame" x="33.666666666666657" y="0.0" width="52" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="sJP-jw-2F9" firstAttribute="top" secondItem="Pvz-Hp-MQF" secondAttribute="top" id="iIk-wG-985"/>
+                                </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKb-LA-H2h">
                                 <rect key="frame" x="97" y="639.33333333333337" width="196" height="34"/>
@@ -71,37 +67,43 @@
                                     <action selector="topicRunButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0GG-rN-Vmz"/>
                                 </connections>
                             </button>
+                            <skView contentMode="scaleToFill" sceneName="AnimatedIphoneHearts.sks" translatesAutoresizingMaskIntoConstraints="NO" id="wbe-Lv-L4j">
+                                <rect key="frame" x="114" y="429" width="163" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="o1C-Vf-oaN"/>
+                                </constraints>
+                            </skView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xFc-Sj-R0B" firstAttribute="centerX" secondItem="Iam-IN-1LP" secondAttribute="centerX" id="0i4-qx-tNe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wbe-Lv-L4j" secondAttribute="trailing" constant="113" id="3Lj-a8-hAt"/>
+                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="top" secondItem="wbe-Lv-L4j" secondAttribute="bottom" constant="8.6666666666667425" id="DG5-KA-SKA"/>
                             <constraint firstItem="yKb-LA-H2h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KqG-wV-sII"/>
                             <constraint firstItem="zIC-Eu-CZA" firstAttribute="centerX" secondItem="yKb-LA-H2h" secondAttribute="centerX" id="SHK-1U-km9"/>
                             <constraint firstItem="yKb-LA-H2h" firstAttribute="top" secondItem="Pvz-Hp-MQF" secondAttribute="bottom" constant="40" id="UHU-p0-9gS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zIC-Eu-CZA" secondAttribute="bottom" constant="60" id="bH4-Do-R0v"/>
                             <constraint firstItem="zIC-Eu-CZA" firstAttribute="top" secondItem="yKb-LA-H2h" secondAttribute="bottom" constant="38.666666666666629" id="bcT-DC-k0k"/>
                             <constraint firstItem="Iam-IN-1LP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ch0-wo-qs2"/>
-                            <constraint firstItem="Pvz-Hp-MQF" firstAttribute="firstBaseline" secondItem="xFc-Sj-R0B" secondAttribute="baseline" constant="37.5" symbolType="layoutAnchor" id="g2u-S7-MMh"/>
-                            <constraint firstItem="xFc-Sj-R0B" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="60" id="kg5-df-j5M"/>
+                            <constraint firstItem="wbe-Lv-L4j" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="114" id="dzV-6g-vyK"/>
                             <constraint firstItem="Pvz-Hp-MQF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="llY-bZ-yKc"/>
                             <constraint firstItem="yKb-LA-H2h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pDQ-Tt-X7Q"/>
-                            <constraint firstItem="xFc-Sj-R0B" firstAttribute="top" secondItem="Iam-IN-1LP" secondAttribute="bottom" constant="25" id="wgc-wE-yeg"/>
+                            <constraint firstItem="wbe-Lv-L4j" firstAttribute="top" secondItem="Iam-IN-1LP" secondAttribute="bottom" constant="22" id="yvp-JK-seQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="NicknameTextField" destination="yKb-LA-H2h" id="Q7u-nS-U5f"/>
                         <outlet property="heartRateLabel" destination="7Z2-sV-alm" id="tDT-9T-mD6"/>
+                        <outlet property="sceneInterface" destination="wbe-Lv-L4j" id="MmQ-u6-rpP"/>
                         <outlet property="topicRunButton" destination="zIC-Eu-CZA" id="N74-a8-lIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="105.80357142857143"/>
+            <point key="canvasLocation" x="60" y="105.21327014218009"/>
         </scene>
     </scenes>
     <resources>
-        <image name="startHeart" width="510" height="516"/>
         <image name="textHeart" width="370" height="307.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,16 +11,30 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TopicRunWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="--" baselineAdjustment="alignCenters" id="hXe-9k-K3J">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                        </label>
+                        <group width="1" height="1" alignment="center" layout="overlap" id="OgO-mP-tl6">
+                            <items>
+                                <spriteKitScene height="182" alignment="left" scene="AnimatedHearts.sks" id="KtJ-Uu-Lms"/>
+                                <group width="1" height="1" alignment="left" layout="overlap" id="DQP-g6-b5B">
+                                    <items>
+                                        <label width="136" height="94" alignment="center" text="- - BPM" textAlignment="center" baselineAdjustment="alignCenters" id="uoe-Jo-0z8">
+                                            <color key="textColor" red="0.8666666666666667" green="1" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="28"/>
+                                            <variation key="device=watch44mm" height="115" width="136"/>
+                                            <variation key="device=watch45mm" height="120"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                            <variation key="device=watch44mm" layout="overlap"/>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="heartRateLabel" destination="hXe-9k-K3J" id="dWG-l8-scJ"/>
+                        <outlet property="heartRateLabel" destination="uoe-Jo-0z8" id="urQ-N9-88t"/>
+                        <outlet property="sceneInterface" destination="KtJ-Uu-Lms" id="Rp7-7c-9Gw"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219.11111111111111" y="338.70558375634516"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
