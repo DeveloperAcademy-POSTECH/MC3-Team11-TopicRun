@@ -13,10 +13,12 @@ func authorization(completion:@escaping (Bool ,HKHealthStore) -> Void ){
     
     let healthStore = HKHealthStore();
     let typesToShare: Set = [
+        HKQuantityType.quantityType(forIdentifier: .heartRate)!,
         HKQuantityType.workoutType()
     ]
     let typesToRead: Set = [
-        HKQuantityType.quantityType(forIdentifier: .heartRate)!
+        HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+        HKQuantityType.workoutType()
     ]
     
     healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (sucess, error) in

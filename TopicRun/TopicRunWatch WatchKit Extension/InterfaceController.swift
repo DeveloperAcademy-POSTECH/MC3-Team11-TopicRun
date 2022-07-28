@@ -64,12 +64,12 @@ class InterfaceController: WKInterfaceController {
             let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
             self.heartRateValue = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
             self.heartRateLabel.setText("\(Int(self.heartRateValue!)) BPM")
-
+            
             
             // 3: Session property를 통해 communicatoin 메소드 구현, counterpart(iPhone)의 응답 관리
             if self.isReachable() {
                 do {
-                    print(self.heartRateValue)
+                    print(self.heartRateValue ?? "nil Heart Rate")
                     try self.session.updateApplicationContext(["request":self.heartRateValue ?? "- -"])
                 } catch {
                     print("error")
@@ -130,17 +130,21 @@ class InterfaceController: WKInterfaceController {
     }
     
 
-// MARK: - iPhone에서 WorkOut 세션 시작 / 종료 명령 메시지 수신
+// MARK: - iPhone에서 [WorkOut 세션 시작 / 종료] 명령 메시지 수신
     private func receiveMessage() {
+        authorization { (success, healthkit) in
+            
+            self.healthStore =  healthkit;
+            if(success){
         if WCSession.isSupported() {
             if let sendedWord = WCSession.default.receivedApplicationContext["action"] as? String {
                 print(sendedWord)
-                if sendedWord == "start" && !workOutFlag{
-                    runWorkOut()
-                    workOutFlag = true
+                if sendedWord == "start" && !self.workOutFlag{
+                    self.runWorkOut()
+                    self.workOutFlag = true
                 } else if sendedWord == "stop" {
-                    stopWorkOut()
-                    workOutFlag = false
+                    self.stopWorkOut()
+                    self.workOutFlag = false
                 } else {
                     print("No Action Type")
                 }
@@ -148,11 +152,12 @@ class InterfaceController: WKInterfaceController {
         } else {
             print("error")
         }
+            }
+        }
     }
 
     
 // MARK: - Counterpart app이 message사용이 가능한지 확인
-    
     private func isSupported() -> Bool {
         return WCSession.isSupported()
     }

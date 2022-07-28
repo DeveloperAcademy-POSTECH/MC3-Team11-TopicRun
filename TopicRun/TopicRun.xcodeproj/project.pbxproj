@@ -30,6 +30,7 @@
 		CCAA3C282887DA6900E29E3B /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
 		CCC27FF6289113F500468C35 /* AnimatedHearts.sks in Resources */ = {isa = PBXBuildFile; fileRef = CCC27FF5289113F500468C35 /* AnimatedHearts.sks */; };
 		CCC27FF9289116BD00468C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05756DC42887D0AF0006C2FD /* Assets.xcassets */; };
+		CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +104,7 @@
 		CCAA3B672887C6E000E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		CCAA3C242887D7C300E29E3B /* TopicRunWatch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopicRunWatch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CCAA3C252887D7C300E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartKitAutorization.swift; sourceTree = "<group>"; };
+		CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartKitAutorization.swift; path = "TopicRunWatch WatchKit Extension/HeartKitAutorization.swift"; sourceTree = SOURCE_ROOT; };
 		CCC27FF5289113F500468C35 /* AnimatedHearts.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimatedHearts.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +355,7 @@
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
 				05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
+				CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */,
 				054F493228913029004FF038 /* SessionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,14 +411,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TZPPZDYCQY;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Everett.TopicRun;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -440,7 +442,7 @@
 				IBSC_MODULE = TopicRunWatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = TopicRunWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Everett.TopicRun;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = developer.Cali.TopicRun;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -460,7 +462,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TopicRunWatch WatchKit Extension/TopicRunWatch WatchKit ExtensionDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TZPPZDYCQY;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TopicRunWatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TopicRunWatch WatchKit Extension";
@@ -477,7 +479,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -645,7 +647,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopicRun/TopicRunDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TZPPZDYCQY;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopicRun/Info.plist;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Please give access to following Data";
@@ -661,7 +663,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = developer.Everett.TopicRun;
+				PRODUCT_BUNDLE_IDENTIFIER = developer.Cali.TopicRun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
