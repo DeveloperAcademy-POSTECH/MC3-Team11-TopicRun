@@ -21,8 +21,6 @@ class CustomAlertViewController: UIViewController {
         setup()
         setLayout()
         view.isUserInteractionEnabled = false
-        
-
     }
     
     override func viewWillLayoutSubviews() {

@@ -8,8 +8,31 @@
 import UIKit
 import Combine
 class HeartBeatViewController: BottomSheetViewController {
-    override var defaultHeight: CGFloat {275}
+//MARK: - private 변수 생성
+    //bpm 숫자
     var bpm: Int {60}
+    //alertview
+    private lazy var alertView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "BottomBack")
+        view.layer.cornerRadius = 10
+        view.alpha = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    //alertword
+    private lazy var alertword: UILabel = {
+        let text = UILabel()
+        text.textColor = .black
+        text.textAlignment = .center
+        text.numberOfLines = 1
+        text.text = "Stop 버튼을 길게 누르면 00이 종료됩니다."
+        text.font = UIFont(name: "Helvetica Neue", size: 18)
+        text.font = .systemFont(ofSize: 18, weight: .bold)
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    //stopButton
     private lazy var stopButton : UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 20
@@ -23,19 +46,18 @@ class HeartBeatViewController: BottomSheetViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
     // keyword
-        private lazy var keyword: UILabel = {
-            let text = UILabel()
-            text.textColor = UIColor(named: "Keyword")
-            text.textAlignment = .center
-            text.text = "# 건강 # 스케줄"
-            text.font = UIFont(name: "Helvetica Neue", size: 20)
-            text.font = .systemFont(ofSize: 20, weight: .bold)
-            text.translatesAutoresizingMaskIntoConstraints = false
-            return text
-        }()
-    // bpm
+    private lazy var keyword: UILabel = {
+        let text = UILabel()
+        text.textColor = UIColor(named: "Keyword")
+        text.textAlignment = .center
+        text.text = "# 건강 # 스케줄"
+        text.font = UIFont(name: "Helvetica Neue", size: 20)
+        text.font = .systemFont(ofSize: 20, weight: .bold)
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+    // bpmLabel
     private lazy var bpmLabel: UILabel = {
         let text = UILabel()
         text.text = "\(bpm) / 120"
@@ -45,68 +67,108 @@ class HeartBeatViewController: BottomSheetViewController {
         return text
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dimmedView.removeFromSuperview()
-        indicatorView.removeFromSuperview()
-        let longpress = MyLongPressGesture(target: self, action: #selector(stopLong(_:)))
-        longpress.delaysTouchesBegan = false
-        longpress.delaysTouchesEnded = false
-        stopButton.addGestureRecognizer(longpress)
-        longpress.minimumPressDuration = 1
-        stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
-    }
-    
+//MARK: - setup UI and Layout
     override func setupUI() {
         super.setupUI()
         bottomSheetView.addSubview(stopButton)
         bottomSheetView.addSubview(keyword)
         bottomSheetView.addSubview(bpmLabel)
+        view.addSubview(alertView)
+        alertView.addSubview(alertword)
     }
-    
+
     override func setupLayout() {
         super.setupLayout()
-//      keyword
+        // keyword
         NSLayoutConstraint.activate([
             keyword.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 33),
             keyword.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
-//      bpmLabel
+        // bpmLabel
         NSLayoutConstraint.activate([
             bpmLabel.topAnchor.constraint(equalTo: keyword.bottomAnchor, constant: 82),
             bpmLabel.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
-//      stopButton
+        // stopButton
         NSLayoutConstraint.activate([
             stopButton.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 194),
             stopButton.heightAnchor.constraint(equalToConstant: stopButton.frame.height),
             stopButton.widthAnchor.constraint(equalToConstant: stopButton.frame.width),
             stopButton.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
+        NSLayoutConstraint.activate([
+            alertView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 104),
+            alertView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  16),
+            alertView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant:  -16),
+            alertView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 168)
+        ])
+        // alerword
+        NSLayoutConstraint.activate([
+            alertword.centerYAnchor.constraint(equalTo: alertView.centerYAnchor),
+            alertword.centerXAnchor.constraint(equalTo: alertView.centerXAnchor)
+        ])
+
+    }
+//MARK: - override of BottomSheetVC
+    override var defaultHeight: CGFloat {275}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dimmedView.removeFromSuperview()
+        indicatorView.removeFromSuperview()
+        // long press
+        let longpress = MyLongPressGesture(target: self, action: #selector(stopLong(_:)))
+        longpress.delaysTouchesBegan = false
+        longpress.delaysTouchesEnded = false
+        longpress.minimumPressDuration = 1
+        stopButton.addGestureRecognizer(longpress)
+        stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
+        changeText()
     }
     
-    override func bottomSheetViewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
-    }
-    @objc private func alert() {
-        let customVC = CustomAlertViewController()
-        customVC.modalPresentationStyle = .overFullScreen
-        self.present(customVC, animated: false, completion: nil)
-    }
+    override func bottomSheetViewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {}
 }
-
+//MARK: - private func for UI
 extension HeartBeatViewController {
+    
+    private func changeText() {
+        guard let text = self.alertword.text else { return }
+        let attributeString = NSMutableAttributedString(string: text)
+        attributeString.addAttribute(.foregroundColor, value: UIColor.red, range: (text as NSString).range(of: "Stop"))
+        attributeString.addAttribute(.font, value: UIFont.systemFont(ofSize: 22,weight: .bold), range: (text as NSString).range(of: "Stop"))
+        self.alertword.attributedText = attributeString
+    }
+    
+    @objc private func alert() {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
+            self.alertView.layoutIfNeeded()
+            self.alertView.alpha = 1
+        }, completion: nil)
+        UIView.animate(withDuration: 0.4, delay: 1, options: .curveEaseInOut, animations: {
+                self.alertView.layoutIfNeeded()
+                self.alertView.alpha = 0
+            }, completion: nil)
+    }
+    
     @objc private func stopLong(_ gesture : MyLongPressGesture) {
-        hideBottomSheet()
+        switch gesture.state {
+        case.began:
+            hideBottomSheet()
+        default:
+            return
+        }
     }
 }
-
+//MARK: - override of BottomSheetVC
 class MyLongPressGesture : UILongPressGestureRecognizer {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesBegan(touches, with: event)
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
             self.view?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }, completion: nil)
     }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesEnded(touches, with: event)
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
