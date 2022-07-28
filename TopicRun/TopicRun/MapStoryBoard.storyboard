@@ -147,9 +147,6 @@
                             <constraint firstItem="8S5-cw-oWj" firstAttribute="top" secondItem="kmB-K6-qbJ" secondAttribute="bottom" id="y75-W2-7MP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Afy-dP-WM7">
-                        <nil key="title"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="TBd-Vh-Dv5" id="EiO-x2-8aG"/>
                         <outlet property="didRunView" destination="0cy-jC-E1k" id="QVH-v4-1G4"/>
