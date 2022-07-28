@@ -34,7 +34,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     let locationManager = CLLocationManager()
-    
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("BottomSheet", for: .normal)
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         //36.014986
@@ -111,8 +117,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // 뒤로 가기 버튼 숨김
         self.navigationItem.leftBarButtonItems = []
         self.navigationItem.hidesBackButton = true
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
+    
+    @objc private func buttonAction(){
+        let bottomSheetVC = FindTopicViewController()
+        bottomSheetVC.modalPresentationStyle = .overFullScreen
+        self.present(bottomSheetVC, animated: false, completion: nil)
+    }
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String) {
         
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {

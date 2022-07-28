@@ -96,11 +96,12 @@ class HeartBeatViewController: BottomSheetViewController {
             stopButton.widthAnchor.constraint(equalToConstant: stopButton.frame.width),
             stopButton.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
+        // alertView
         NSLayoutConstraint.activate([
-            alertView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 104),
+            alertView.topAnchor.constraint(equalTo: view.topAnchor, constant: 114),
             alertView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  16),
             alertView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant:  -16),
-            alertView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 168)
+            alertView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 176)
         ])
         // alerword
         NSLayoutConstraint.activate([
