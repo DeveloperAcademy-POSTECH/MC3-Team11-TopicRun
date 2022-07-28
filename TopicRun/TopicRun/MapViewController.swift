@@ -11,6 +11,9 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    var timer: Timer = Timer()
+    var count: Int = 0
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var runButton: UIButton!
@@ -59,6 +62,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // 두 번째 마커
         let secondPlace = MapMarker(keyword: ["매미","여름","얼음"], subject: "여름에 매미에게 얼음을 보여주자", coordinate: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), isVisit: false)
+        
+        
         
         // 지오펜스 설정.
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), identifier: "second")
@@ -163,6 +168,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             bottomSheetVC.modalPresentationStyle = .overFullScreen
             self.present(bottomSheetVC, animated: false, completion: nil)
         }
+    }
+    
+    func timerCounter() {
+        count = count + 1
+        let time = secondsToHoursMinutesSeconds(seconds: count)
+        let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        
+    }
+    
+    func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int) {
+        return ((seconds / 3600), ((seconds % 3600) / 60), ((seconds % 3600) % 60))
+    }
+    
+    func makeTimeString(hours: Int, minutes: Int, seconds: Int) -> String {
+        var timeString = ""
+        timeString += String(format: "%02d", hours)
+        timeString += ":"
+        timeString += String(format: "%02d", minutes)
+        timeString += ":"
+        timeString += String(format: "%02d", seconds)
+        return timeString
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
