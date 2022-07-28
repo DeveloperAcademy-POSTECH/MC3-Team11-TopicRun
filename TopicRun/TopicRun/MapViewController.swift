@@ -11,6 +11,8 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
     @IBOutlet weak var runButton: UIButton!
     @IBOutlet weak var willRunView: UIView!
     @IBOutlet weak var didRunView: UIView!
@@ -191,6 +193,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         willRunView.isHidden = true
         didRunView.isHidden = false
         
+        
+        
     }
     @IBAction func clickStopButton(_ sender: Any) {
         
@@ -251,4 +255,6 @@ private extension MKMapView {
     }
     
 }
+
+
 
