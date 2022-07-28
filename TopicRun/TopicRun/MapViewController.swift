@@ -39,7 +39,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         //36.014986
         //129.325184
+
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         // 첫 번째 마커
         mapView.delegate = self
         let firstPlace = MapMarker(keyword: ["건강","운세","돈"], subject: "건강 운세로 돈을 벌어라.", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false)
@@ -133,10 +135,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let region = region as? CLCircularRegion {
             let identifier = region.identifier
             //            triggerTaskAssociateWithRegionIdentifier(regionID: identifier)
-            let alert = UIAlertController(title: "들어감", message: "들어감 내용 \(identifier) \(mapView.userLocation.coordinate)", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(ok)
-            present(alert, animated: true)
+//            let alert = UIAlertController(title: "들어감", message: "들어감 내용 \(identifier) \(mapView.userLocation.coordinate)", preferredStyle: .alert)
+//            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alert.addAction(ok)
+//            present(alert, animated: true)
+            let bottomSheetVC = FindTopicViewController()
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            self.present(bottomSheetVC, animated: false, completion: nil)
         }
     }
     
