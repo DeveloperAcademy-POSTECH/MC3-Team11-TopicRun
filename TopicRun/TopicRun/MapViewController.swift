@@ -24,6 +24,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var userLocationButton: UIButton!
     @IBOutlet var backButton: UIButton!
     
+    @IBOutlet weak var heartRateLabel: UILabel!
     private var isStart = false
     
     @IBAction func goBack(_ sender: Any) {
@@ -199,7 +200,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
         
         timerLabel.text = timeString
-        print("hello1")
         
     }
     
