@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class CollectionVC: UIViewController {
+    let data = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet var TopicImage: UIImageView!
     @IBOutlet weak var CollectionArea: UIView!
     
@@ -25,7 +27,7 @@ class CollectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        data.persistentContainer.addTopic(keyword: "추카", topic: "추가")
         TopicImage.layer.masksToBounds = true
         TopicImage.layer.cornerRadius = 15
         TopicImage.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMinXMinYCorner)
@@ -41,7 +43,22 @@ class CollectionVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let keyword = data.persistentContainer.savedEntities[0].keyword
+        let topic = data.persistentContainer.savedEntities[0].topic
+        let date = data.persistentContainer.savedEntities[0].date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let str = dateFormatter.string(from: date!)
+        
+        
+        
+        TopicTitle.text = topic
+        TopicHashTage.text = keyword
+        StartDate.string = str
+        
+    }
     @IBAction func AddTopicButton(_ sender: Any) {
     }
     
