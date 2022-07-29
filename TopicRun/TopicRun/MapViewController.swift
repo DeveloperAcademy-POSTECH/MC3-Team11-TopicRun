@@ -252,8 +252,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         timeString += String(format: "%02d", hours)
         timeString += ":"
         timeString += String(format: "%02d", minutes)
-        timeString += ":"
-        timeString += String(format: "%02d", seconds)
         return timeString
     }
     
