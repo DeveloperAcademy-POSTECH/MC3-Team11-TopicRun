@@ -27,7 +27,6 @@ class CollectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.persistentContainer.addTopic(keyword: "추카", topic: "추가")
         TopicImage.layer.masksToBounds = true
         TopicImage.layer.cornerRadius = 15
         TopicImage.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMinXMinYCorner)

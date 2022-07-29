@@ -92,7 +92,7 @@ class CDModel {
         }
     }
 
-    func addTopic(keyword : String, topic : String){
+    func addTopic(keyword : String, topic : String, runtime : String){
         
         let topics = Info(context: container.viewContext)
         
@@ -106,6 +106,11 @@ class CDModel {
             topics.topic = "No topic"
         } else{
             topics.topic = topic
+        }
+        if topic.isEmpty {
+            topics.runtime = "00:00"
+        } else{
+            topics.runtime = runtime
         }
         
         topics.date = .now
