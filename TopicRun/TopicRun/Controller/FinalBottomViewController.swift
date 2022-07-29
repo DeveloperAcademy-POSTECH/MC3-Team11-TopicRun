@@ -63,6 +63,7 @@ class FinalBottomViewController: BottomSheetViewController {
             closedButton.isUserInteractionEnabled = true
             xmarkView.tintColor = .white
             super.viewDidLoad()
+            //
             dimmedView.removeFromSuperview()
             indicatorView.removeFromSuperview()
         }

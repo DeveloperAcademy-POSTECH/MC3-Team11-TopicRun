@@ -155,7 +155,7 @@ class HeartBeatViewController: BottomSheetViewController {
         stopButton.addGestureRecognizer(longpress)
         stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
         collectHeartRate()
-        
+        // keyword.text = markerInfo.subject
         changeText()
         let tap = UITapGestureRecognizer(target: self, action: #selector(touchSaveTest(_:)))
         heartBeatView.addGestureRecognizer(tap)
@@ -240,6 +240,7 @@ extension HeartBeatViewController {
 //        appDelegate.persistentContainer.addTopic(keyword: "나 돌아갈래", topic: "으ㅏ아아아")
         let vc = FinalBottomViewController()
         vc.modalPresentationStyle = .overFullScreen
+        vc.markerInfo = self.markerInfo
         self.present(vc, animated: false)
 
     }
