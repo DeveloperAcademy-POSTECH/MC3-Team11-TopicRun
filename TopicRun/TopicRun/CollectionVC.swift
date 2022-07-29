@@ -56,7 +56,7 @@ class CollectionVC: UIViewController {
         
         TopicTitle.text = topic
         TopicHashTage.text = keyword
-        StartDate.string = str
+        StartDate.text = str
         
     }
     @IBAction func AddTopicButton(_ sender: Any) {
