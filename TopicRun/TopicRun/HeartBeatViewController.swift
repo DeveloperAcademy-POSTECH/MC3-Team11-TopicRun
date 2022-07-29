@@ -47,9 +47,8 @@ class HeartBeatViewController: BottomSheetViewController {
         text.textColor = .black
         text.textAlignment = .center
         text.numberOfLines = 1
-        text.text = "Stop 버튼을 길게 누르면 00이 종료됩니다."
+        text.text = "Stop 버튼을 길게 누르면 주제 선정이 종료됩니다."
         text.font = UIFont(name: "Helvetica Neue", size: 18)
-        text.font = .systemFont(ofSize: 18, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
