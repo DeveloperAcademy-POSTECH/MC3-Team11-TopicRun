@@ -116,7 +116,8 @@ class FinalBottomViewController: BottomSheetViewController {
         }
     @objc private func saveTopic() {
         let vc = CollectionVC()
-        mapTimer.invalidate()
+        mapTimer?.invalidate()
+        
         print(timerText.text!)
         appDelegate.persistentContainer.addTopic(keyword: keyword.text!, topic: topic.text!, runtime: timerText.text!)
 //        vc.modalPresentationStyle = .overFullScreen
