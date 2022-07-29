@@ -11,9 +11,12 @@ class BottomSheetViewController: UIViewController {
     
     var defaultHeight: CGFloat {300}
     
+    var markerInfo: MapMarker!
+    
     private lazy var bottomSheetPanStartingTopConstant: CGFloat = bottomSheetViewTopConstraint.constant
     
     let dimmedView: UIView = {
+        
         let view = UIView()
         view.backgroundColor = .darkGray.withAlphaComponent(0.7)
         view.translatesAutoresizingMaskIntoConstraints = false

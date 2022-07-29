@@ -54,6 +54,7 @@ class FindTopicViewController: BottomSheetViewController {
         let buttomTap = UITapGestureRecognizer(target: self, action: #selector(buttonClosed))
         closedButton.addGestureRecognizer(buttomTap)
         closedButton.isUserInteractionEnabled = true
+        // keywordFined = markerInfo.subject
         xmarkView.tintColor = .white
         nextButton.addTarget(self, action: #selector(showNextView), for: .touchUpInside)
         super.viewDidLoad()
@@ -106,6 +107,7 @@ extension FindTopicViewController {
     @objc private func showNextView() {
         let bottomSheetVC = HeartBeatViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
+        bottomSheetVC.markerInfo = self.markerInfo
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }
