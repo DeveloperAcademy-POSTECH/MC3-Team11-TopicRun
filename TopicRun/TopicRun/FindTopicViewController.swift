@@ -8,7 +8,7 @@
 import UIKit
 
 class FindTopicViewController: BottomSheetViewController {
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //MARK: - determining defaultHeight of bottomSheetView
 
     override var defaultHeight: CGFloat {196}
@@ -57,6 +57,11 @@ class FindTopicViewController: BottomSheetViewController {
         xmarkView.tintColor = .white
         nextButton.addTarget(self, action: #selector(showNextView), for: .touchUpInside)
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(appDelegate.persistentContainer.savedEntities.count)
+        textLabel.text = appDelegate.persistentContainer.savedEntities[1].topic
     }
     
     override func setupUI() {

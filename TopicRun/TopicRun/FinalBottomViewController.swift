@@ -10,7 +10,7 @@ import UIKit
 class FinalBottomViewController: BottomSheetViewController {
     
     override var defaultHeight: CGFloat {275}
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     //  Xmark
         let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .semibold)
         lazy var xmark = UIImage(systemName: "xmark", withConfiguration: config)
@@ -64,8 +64,12 @@ class FinalBottomViewController: BottomSheetViewController {
             xmarkView.tintColor = .white
             super.viewDidLoad()
             dimmedView.removeFromSuperview()
+            indicatorView.removeFromSuperview()
         }
-        
+    override func viewWillAppear(_ animated: Bool) {
+        topic.text = appDelegate.persistentContainer.savedEntities[4].topic
+        keyword.text = appDelegate.persistentContainer.savedEntities[4].keyword
+    }
         override func setupUI() {
             super.setupUI()
             bottomSheetView.addSubview(closedButton)
@@ -74,7 +78,7 @@ class FinalBottomViewController: BottomSheetViewController {
             bottomSheetView.addSubview(topic)
             bottomSheetView.addSubview(developButton)
         }
-        
+
         override func setupLayout() {
             super.setupLayout()
             
