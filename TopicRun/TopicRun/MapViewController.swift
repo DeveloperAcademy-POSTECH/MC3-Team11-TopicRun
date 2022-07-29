@@ -161,6 +161,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let bottomSheetVC = FindTopicViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         self.present(bottomSheetVC, animated: false, completion: nil)
+        view.endEditing(true)
     }
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String) {
         
