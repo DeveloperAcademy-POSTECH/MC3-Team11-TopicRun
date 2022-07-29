@@ -200,11 +200,6 @@
 		36DF531728852ED10099CD64 /* TopicRun */ = {
 			isa = PBXGroup;
 			children = (
-				36DF531828852ED10099CD64 /* AppDelegate.swift */,
-				36DF531A28852ED10099CD64 /* SceneDelegate.swift */,
-				0C2F79EC2887F53900D97093 /* Protocol.swift */,
-				CFC82CC0288989F200555C1D /* MapMarker.swift */,
-				054F493128913029004FF038 /* SessionHandler.swift */,
 				0CC3C4582888319C0020CBBE /* FindTopicViewController.swift */,
 				0C350493288E36D50092A6D6 /* HeartBeatViewController.swift */,
 				36DF531C28852ED10099CD64 /* ViewController.swift */,
@@ -213,6 +208,11 @@
 				0C2F79EA28858CB100D97093 /* BottomSheetViewController.swift */,
 				05E832F72886840600F78EE4 /* StartPageViewController.swift */,
 				0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */,
+				36DF531828852ED10099CD64 /* AppDelegate.swift */,
+				36DF531A28852ED10099CD64 /* SceneDelegate.swift */,
+				0C2F79EC2887F53900D97093 /* Protocol.swift */,
+				CFC82CC0288989F200555C1D /* MapMarker.swift */,
+				054F493128913029004FF038 /* SessionHandler.swift */,
 				36DF531E28852ED10099CD64 /* Main.storyboard */,
 				CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */,
 				36DF53782891DFD40099CD64 /* MainPage.storyboard */,

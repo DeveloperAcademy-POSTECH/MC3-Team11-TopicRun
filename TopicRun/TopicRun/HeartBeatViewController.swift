@@ -241,6 +241,7 @@ extension HeartBeatViewController {
         let vc = FinalBottomViewController()
         vc.modalPresentationStyle = .overFullScreen
         vc.markerInfo = self.markerInfo
+        vc.mapTimer = self.mapTimer
         self.present(vc, animated: false)
 
     }

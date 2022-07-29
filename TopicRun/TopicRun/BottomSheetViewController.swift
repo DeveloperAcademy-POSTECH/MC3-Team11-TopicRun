@@ -12,6 +12,7 @@ class BottomSheetViewController: UIViewController {
     var defaultHeight: CGFloat {300}
     
     var markerInfo: MapMarker!
+    var mapTimer: Timer!
     
     private lazy var bottomSheetPanStartingTopConstant: CGFloat = bottomSheetViewTopConstraint.constant
     

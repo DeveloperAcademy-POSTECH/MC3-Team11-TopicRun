@@ -108,6 +108,7 @@ extension FindTopicViewController {
         let bottomSheetVC = HeartBeatViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.markerInfo = self.markerInfo
+        bottomSheetVC.mapTimer = self.mapTimer
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }
