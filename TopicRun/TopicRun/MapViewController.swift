@@ -7,11 +7,15 @@
 
 import UIKit
 import MapKit
+import WatchConnectivity
+import HealthKit
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    // 시간 표시용 타이머
     var timer: Timer = Timer()
+    var heartTimer: Timer = Timer()
     var count: Int = 0
     
     
@@ -26,13 +30,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var backButton: UIButton!
     
     @IBOutlet weak var heartRateLabel: UILabel!
+    
     private var isStart = false
     
+
     private var regions = [String: MapMarker]()
+
+    var session = WCSession.default
+
     
     @IBAction func goBack(_ sender: Any) {
         // 뒤로 가기 버튼
         self.navigationController?.popViewController(animated: true)
+        
+        // AppleWatch에 [WorkOut 세션 종료] 명령 메시지 전달
+        do {
+            try self.session.updateApplicationContext(["action": "stop"])
+        } catch {
+            print("error")
+        }
     }
     
     
@@ -55,8 +71,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         //36.014986
         //129.325184
-        
-        
         
         runButton.layer.cornerRadius = 20
         runButton.setTitle("Topic Run!", for: .normal)
@@ -183,6 +197,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.markerInfo = regions["first"]
         self.present(bottomSheetVC, animated: false, completion: nil)
+        view.endEditing(true)
     }
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String) {
         
@@ -241,6 +256,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return timeString
     }
     
+// MARK: - 1초마다 HeartRate 데이터 수집
+    func collectHeartRate() {
+        self.heartTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if HKHealthStore.isHealthDataAvailable() {
+                if WCSession.isSupported() {
+                    if let heartValue = WCSession.default.receivedApplicationContext["request"] {
+                        print("MapViewController: \(WCSession.default.receivedApplicationContext)")
+                        self.heartRateLabel.text = "\(heartValue)"
+                    } else {
+                        self.heartRateLabel.text = "- -"
+                    }
+                }
+            }
+        })
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         // 마커들 확인.
@@ -271,13 +302,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         willRunView.isHidden = true
         didRunView.isHidden = false
         
-        
-        
+        collectHeartRate()
     }
     @IBAction func clickStopButton(_ sender: Any) {
         
         isStart = false
         timer.invalidate()
+        heartTimer.invalidate()
         self.count = 0
         willRunView.isHidden = false
         didRunView.isHidden = true
