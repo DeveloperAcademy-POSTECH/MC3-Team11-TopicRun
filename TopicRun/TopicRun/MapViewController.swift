@@ -193,10 +193,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    func timerCounter() {
+    @objc func timerCounter() {
         count = count + 1
         let time = secondsToHoursMinutesSeconds(seconds: count)
         let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        
+        timerLabel.text = timeString
+        print("hello1")
         
     }
     
@@ -237,6 +240,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     @IBAction func clickRunButton(_ sender: Any) {
         
+        timer = Timer.scheduledTimer(timeInterval: 0.0157, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        
         isStart = true
         
         willRunView.isHidden = true
@@ -248,7 +253,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func clickStopButton(_ sender: Any) {
         
         isStart = false
-
+        timer.invalidate()
+        self.count = 0
         willRunView.isHidden = false
         didRunView.isHidden = true
         
