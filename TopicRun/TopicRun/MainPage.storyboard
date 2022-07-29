@@ -140,7 +140,7 @@
                                                                     <constraint firstItem="suB-CH-K26" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="29" id="yGb-Mm-4tH"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby01" translatesAutoresizingMaskIntoConstraints="NO" id="M4N-Oc-5aK">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby06" translatesAutoresizingMaskIntoConstraints="NO" id="M4N-Oc-5aK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="556"/>
                                                             </imageView>
                                                         </subviews>
@@ -286,9 +286,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="baby01" width="4560" height="3648"/>
         <image name="baby02" width="5472" height="3648"/>
         <image name="baby03" width="6000" height="6000"/>
+        <image name="baby06" width="352" height="511"/>
         <image name="􀅼" width="19" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
