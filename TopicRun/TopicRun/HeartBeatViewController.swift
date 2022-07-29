@@ -181,6 +181,9 @@ extension HeartBeatViewController {
         case.began:
 //            appDelegate.persistentContainer.addTopic(keyword: "done", topic: "done")
             UIDevice.vibrate()
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
+                self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
             hideBottomSheet()
         default:
             return
