@@ -109,6 +109,7 @@ extension FindTopicViewController {
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.markerInfo = self.markerInfo
         bottomSheetVC.mapTimer = self.mapTimer
+        bottomSheetVC.timerText = self.timerText
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }

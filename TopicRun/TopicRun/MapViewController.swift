@@ -197,6 +197,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.markerInfo = regions["first"]
         bottomSheetVC.mapTimer = timer
+        bottomSheetVC.timerText = timerLabel
         self.present(bottomSheetVC, animated: false, completion: nil)
         view.endEditing(true)
     }
