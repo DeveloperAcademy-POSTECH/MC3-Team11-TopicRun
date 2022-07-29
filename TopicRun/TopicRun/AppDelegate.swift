@@ -107,7 +107,7 @@ class CDModel {
         } else{
             topics.topic = topic
         }
-        if topic.isEmpty {
+        if runtime.isEmpty {
             topics.runtime = "00:00"
         } else{
             topics.runtime = runtime
