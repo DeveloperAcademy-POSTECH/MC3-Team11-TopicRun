@@ -60,7 +60,6 @@ class FindTopicViewController: BottomSheetViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(appDelegate.persistentContainer.savedEntities.count)
         textLabel.text = appDelegate.persistentContainer.savedEntities[1].topic
     }
     

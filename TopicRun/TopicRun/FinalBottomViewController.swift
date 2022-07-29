@@ -67,8 +67,6 @@ class FinalBottomViewController: BottomSheetViewController {
             indicatorView.removeFromSuperview()
         }
     override func viewWillAppear(_ animated: Bool) {
-        topic.text = appDelegate.persistentContainer.savedEntities[4].topic
-        keyword.text = appDelegate.persistentContainer.savedEntities[4].keyword
     }
         override func setupUI() {
             super.setupUI()
