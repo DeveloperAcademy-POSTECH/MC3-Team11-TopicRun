@@ -71,7 +71,7 @@ class HeartBeatViewController: BottomSheetViewController {
         let text = UILabel()
         text.textColor = UIColor(named: "Keyword")
         text.textAlignment = .center
-        text.text = "# 건강 # 스케줄"
+        text.text = ""
         text.font = UIFont(name: "Helvetica Neue", size: 20)
         text.font = .systemFont(ofSize: 20, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +154,7 @@ class HeartBeatViewController: BottomSheetViewController {
         stopButton.addGestureRecognizer(longpress)
         stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
         collectHeartRate()
-        // keyword.text = markerInfo.subject
+        keyword.text = "#" + " " + markerInfo.keyword[0] + " " + "#" + " " + markerInfo.keyword[1]
         changeText()
         let tap = UITapGestureRecognizer(target: self, action: #selector(touchSaveTest(_:)))
         heartBeatView.addGestureRecognizer(tap)

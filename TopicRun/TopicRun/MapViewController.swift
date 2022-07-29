@@ -229,7 +229,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let bottomSheetVC = FindTopicViewController()
             bottomSheetVC.modalPresentationStyle = .overFullScreen
             bottomSheetVC.markerInfo = regions[identifier]
-            
             self.present(bottomSheetVC, animated: false, completion: nil)
         }
     }

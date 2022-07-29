@@ -12,7 +12,6 @@ class FindTopicViewController: BottomSheetViewController {
 //MARK: - determining defaultHeight of bottomSheetView
 
     override var defaultHeight: CGFloat {196}
-    var keywordFined: String = ""
 //MARK: - Create View
     
 //  Xmark
@@ -41,7 +40,7 @@ class FindTopicViewController: BottomSheetViewController {
         let text = UILabel()
         text.tintColor = .black
         text.textAlignment = .center
-        text.text = "\(keywordFined)"
+        text.text = ""
         text.font = UIFont(name: "Helvetica Neue", size: 24)
         text.font = .systemFont(ofSize: 24, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +53,7 @@ class FindTopicViewController: BottomSheetViewController {
         let buttomTap = UITapGestureRecognizer(target: self, action: #selector(buttonClosed))
         closedButton.addGestureRecognizer(buttomTap)
         closedButton.isUserInteractionEnabled = true
+        textLabel.text = "#" + " " + markerInfo.keyword[0] + " " + "#" + " " + markerInfo.keyword[1]
         // keywordFined = markerInfo.subject
         xmarkView.tintColor = .white
         nextButton.addTarget(self, action: #selector(showNextView), for: .touchUpInside)
