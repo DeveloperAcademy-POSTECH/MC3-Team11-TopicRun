@@ -152,6 +152,7 @@
                         <outlet property="didRunView" destination="0cy-jC-E1k" id="QVH-v4-1G4"/>
                         <outlet property="mapView" destination="kmB-K6-qbJ" id="Xw4-kO-Z1s"/>
                         <outlet property="runButton" destination="Ff0-of-VAD" id="G6U-fu-OhU"/>
+                        <outlet property="stopButton" destination="Isz-Go-otS" id="8dz-NW-QuD"/>
                         <outlet property="timerLabel" destination="R7f-Iz-gL5" id="ipx-F9-rcy"/>
                         <outlet property="userLocationButton" destination="MjS-KR-mYs" id="H2p-zc-POC"/>
                         <outlet property="willRunView" destination="8S5-cw-oWj" id="5t9-8n-b8L"/>

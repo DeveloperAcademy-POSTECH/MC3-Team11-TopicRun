@@ -14,6 +14,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var timer: Timer = Timer()
     var count: Int = 0
     
+    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var runButton: UIButton!
@@ -50,6 +51,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         //36.014986
         //129.325184
+        
+        
+        
+        runButton.layer.cornerRadius = 20
+        runButton.setTitle("Topic Run!", for: .normal)
+        runButton.setTitleColor(UIColor(named: "RunColor"), for: .normal)
+        runButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 22)
+        runButton.titleLabel?.font = .systemFont(ofSize: 22, weight: .bold)
+        runButton.backgroundColor = .black
+        runButton.frame = CGRect(x: 0, y: 0, width: 168, height: 40)
+        runButton.layer.cornerRadius = 20
+        runButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        stopButton.layer.cornerRadius = 20
+        stopButton.setTitle("Stop", for: .normal)
+        stopButton.setTitleColor(UIColor(named: "RunColor"), for: .normal)
+        stopButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 22)
+        stopButton.titleLabel?.font = .systemFont(ofSize: 22, weight: .bold)
+        stopButton.backgroundColor = .black
+        stopButton.frame = CGRect(x: 0, y: 0, width: 168, height: 40)
+        stopButton.layer.cornerRadius = 20
+        stopButton.translatesAutoresizingMaskIntoConstraints = false
 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
 
