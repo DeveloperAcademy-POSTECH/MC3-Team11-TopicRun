@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 class CollectionVC: UIViewController {
+    @IBOutlet var TopicImage: UIImageView!
     @IBOutlet weak var CollectionArea: UIView!
-    @IBOutlet weak var TopicImage: UIImageView!
+    
     
     @IBOutlet weak var RunTime: UILabel!
     @IBOutlet weak var StartDate: UILabel!
@@ -19,6 +20,8 @@ class CollectionVC: UIViewController {
     
     @IBOutlet var TopicTitle: UILabel!
     @IBOutlet var TopicHashTage: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
