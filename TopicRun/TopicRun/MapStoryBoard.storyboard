@@ -53,9 +53,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-of-VAD" userLabel="RunButton">
-                                        <rect key="frame" x="173.5" y="92" width="67" height="31"/>
+                                        <rect key="frame" x="124.5" y="100" width="165" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="EPy-jK-2ko"/>
+                                            <constraint firstAttribute="height" constant="40" id="fbN-BL-cLL"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
                                             <action selector="clickRunButton:" destination="1nk-6A-anL" eventType="touchUpInside" id="AfB-Ky-DIT"/>
                                         </connections>
@@ -63,11 +67,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ff0-of-VAD" secondAttribute="bottom" constant="18" id="13g-SC-Klt"/>
                                     <constraint firstItem="kCO-4A-Xi0" firstAttribute="centerX" secondItem="8S5-cw-oWj" secondAttribute="centerX" id="4Jh-Nj-YfX"/>
                                     <constraint firstAttribute="height" constant="158" id="5Q8-TE-adD"/>
                                     <constraint firstItem="Ff0-of-VAD" firstAttribute="centerX" secondItem="8S5-cw-oWj" secondAttribute="centerX" id="VMQ-Nt-n8i"/>
                                     <constraint firstItem="kCO-4A-Xi0" firstAttribute="top" secondItem="8S5-cw-oWj" secondAttribute="top" constant="37" id="Xds-AP-h7l"/>
-                                    <constraint firstItem="Ff0-of-VAD" firstAttribute="top" secondItem="kCO-4A-Xi0" secondAttribute="bottom" constant="34" id="pSe-P3-iVE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cy-jC-E1k" userLabel="DidRunView">
@@ -94,16 +98,20 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="runImage" translatesAutoresizingMaskIntoConstraints="NO" id="c2N-2p-1Zy">
                                         <rect key="frame" x="165" y="25" width="60" height="52"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isz-Go-otS">
-                                        <rect key="frame" x="168" y="109" width="55" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isz-Go-otS">
+                                        <rect key="frame" x="124.5" y="100" width="165" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="ehr-My-7mU"/>
+                                            <constraint firstAttribute="height" constant="40" id="x55-Mm-ZuU"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="clickStopButton:" destination="1nk-6A-anL" eventType="touchUpInside" id="Yez-iq-Mx6"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKh-h0-KRW">
-                                        <rect key="frame" x="295.5" y="59" width="30" height="21"/>
+                                        <rect key="frame" x="295.5" y="63" width="30" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
@@ -116,7 +124,6 @@
                                     <constraint firstItem="3ln-ZZ-CZE" firstAttribute="top" secondItem="I1J-O6-KOD" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yr-Fa-i1P"/>
                                     <constraint firstItem="c2N-2p-1Zy" firstAttribute="leading" secondItem="3ln-ZZ-CZE" secondAttribute="trailing" constant="68" id="IK0-H0-bri"/>
                                     <constraint firstItem="DKh-h0-KRW" firstAttribute="leading" secondItem="c2N-2p-1Zy" secondAttribute="trailing" constant="65" id="Rtv-XP-DsP"/>
-                                    <constraint firstItem="Isz-Go-otS" firstAttribute="top" secondItem="c2N-2p-1Zy" secondAttribute="bottom" constant="32" id="Uu4-Tv-i3g"/>
                                     <constraint firstAttribute="height" constant="158" id="Y0P-qZ-Yvx"/>
                                     <constraint firstItem="Isz-Go-otS" firstAttribute="centerX" secondItem="0cy-jC-E1k" secondAttribute="centerX" id="bh0-mk-1NX"/>
                                     <constraint firstAttribute="bottom" secondItem="Isz-Go-otS" secondAttribute="bottom" constant="18" id="dep-TL-Uvm"/>
@@ -124,7 +131,7 @@
                                     <constraint firstItem="I1J-O6-KOD" firstAttribute="top" secondItem="0cy-jC-E1k" secondAttribute="top" constant="27" id="pTX-L5-fi2"/>
                                     <constraint firstItem="R7f-Iz-gL5" firstAttribute="centerX" secondItem="DKh-h0-KRW" secondAttribute="centerX" id="pw9-Bf-SoB"/>
                                     <constraint firstItem="c2N-2p-1Zy" firstAttribute="top" secondItem="0cy-jC-E1k" secondAttribute="top" constant="25" id="qZl-JZ-7qC"/>
-                                    <constraint firstItem="DKh-h0-KRW" firstAttribute="top" secondItem="R7f-Iz-gL5" secondAttribute="bottom" constant="4" id="zOh-ua-bVF"/>
+                                    <constraint firstItem="DKh-h0-KRW" firstAttribute="top" secondItem="R7f-Iz-gL5" secondAttribute="bottom" constant="8" symbolic="YES" id="zOh-ua-bVF"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -199,7 +199,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let timeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
         
         timerLabel.text = timeString
-        print("hello1")
         
     }
     
