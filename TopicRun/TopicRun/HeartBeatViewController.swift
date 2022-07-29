@@ -234,6 +234,7 @@ extension HeartBeatViewController {
                 }
             }
         })
+    }
 
     @objc private func touchSaveTest(_ gesture: UITapGestureRecognizer) {
 //        appDelegate.persistentContainer.addTopic(keyword: "나 돌아갈래", topic: "으ㅏ아아아")
