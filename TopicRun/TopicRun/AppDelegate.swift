@@ -108,9 +108,9 @@ class CDModel {
             topics.topic = topic
         }
         if runtime.isEmpty {
-            topics.runtimes = "00:00"
+            topics.runtime = "00:00"
         } else{
-            topics.runtimes = runtime
+            topics.runtime = runtime
         }
         
         topics.date = .now
