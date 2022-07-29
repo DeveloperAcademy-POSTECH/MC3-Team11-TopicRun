@@ -64,6 +64,7 @@ class FinalBottomViewController: BottomSheetViewController {
             xmarkView.tintColor = .white
             super.viewDidLoad()
             dimmedView.removeFromSuperview()
+            indicatorView.removeFromSuperview()
         }
     override func viewWillAppear(_ animated: Bool) {
         topic.text = appDelegate.persistentContainer.savedEntities[4].topic
