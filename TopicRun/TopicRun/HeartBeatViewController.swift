@@ -240,6 +240,7 @@ extension HeartBeatViewController {
         vc.modalPresentationStyle = .overFullScreen
         vc.markerInfo = self.markerInfo
         vc.mapTimer = self.mapTimer
+        vc.timerText = self.timerText
         self.present(vc, animated: false)
 
     }

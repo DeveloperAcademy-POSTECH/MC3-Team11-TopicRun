@@ -13,6 +13,7 @@ class BottomSheetViewController: UIViewController {
     
     var markerInfo: MapMarker!
     var mapTimer: Timer!
+    var timerText: UILabel!
     
     private lazy var bottomSheetPanStartingTopConstant: CGFloat = bottomSheetViewTopConstraint.constant
     
