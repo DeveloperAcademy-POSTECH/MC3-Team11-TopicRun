@@ -6,17 +6,32 @@
 //
 
 import UIKit
-import Combine
+import AVFoundation
+import SpriteKit
 import HealthKit
 import WatchConnectivity
 
 class HeartBeatViewController: BottomSheetViewController {
 //MARK: - private 변수 생성
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     //bpm 숫자
+
     var bpm = 0
     var session = WCSession.default
     var timer = Timer()
-    
+
+    // HeartBeatView
+    private lazy var heartBeatView: SKView = {
+        let view = SKView()
+        let scene = SKScene(fileNamed: "AnimatedIphoneHearts.sks")
+        view.backgroundColor = .clear
+        
+        view.presentScene(scene)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     //alertview
     private lazy var alertView: UIView = {
         let view = UIView()
@@ -79,6 +94,7 @@ class HeartBeatViewController: BottomSheetViewController {
         bottomSheetView.addSubview(stopButton)
         bottomSheetView.addSubview(keyword)
         bottomSheetView.addSubview(bpmLabel)
+        bottomSheetView.addSubview(heartBeatView)
         view.addSubview(alertView)
         alertView.addSubview(alertword)
     }
@@ -90,9 +106,17 @@ class HeartBeatViewController: BottomSheetViewController {
             keyword.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 33),
             keyword.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
+        // heartBeatView
+        NSLayoutConstraint.activate([
+            heartBeatView.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor),
+            heartBeatView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 60),
+            heartBeatView.bottomAnchor.constraint(equalTo: bpmLabel.topAnchor, constant: -10),
+            heartBeatView.heightAnchor.constraint(equalToConstant: 63),
+            heartBeatView.widthAnchor.constraint(equalToConstant: 63)
+        ])
         // bpmLabel
         NSLayoutConstraint.activate([
-            bpmLabel.topAnchor.constraint(equalTo: keyword.bottomAnchor, constant: 82),
+            bpmLabel.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 139),
             bpmLabel.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
         ])
         // stopButton
@@ -133,6 +157,8 @@ class HeartBeatViewController: BottomSheetViewController {
         collectHeartRate()
         
         changeText()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchSaveTest(_:)))
+        heartBeatView.addGestureRecognizer(tap)
     }
     
     override func bottomSheetViewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {}
@@ -149,6 +175,7 @@ extension HeartBeatViewController {
     }
     
     @objc private func alert() {
+        UIDevice.vibrate()
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
             self.alertView.alpha = 1
         }, completion: nil)
@@ -160,6 +187,11 @@ extension HeartBeatViewController {
     @objc private func stopLong(_ gesture : MyLongPressGesture) {
         switch gesture.state {
         case.began:
+//            appDelegate.persistentContainer.addTopic(keyword: "done", topic: "done")
+            UIDevice.vibrate()
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
+                self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
             hideBottomSheet()
             
             workOutStop()
@@ -168,6 +200,7 @@ extension HeartBeatViewController {
             return
         }
     }
+
     
     private func isReachable() -> Bool {
         return session.isReachable
@@ -201,6 +234,13 @@ extension HeartBeatViewController {
                 }
             }
         })
+
+    @objc private func touchSaveTest(_ gesture: UITapGestureRecognizer) {
+//        appDelegate.persistentContainer.addTopic(keyword: "나 돌아갈래", topic: "으ㅏ아아아")
+        let vc = FinalBottomViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
+
     }
 }
 //MARK: - override of BottomSheetVC
@@ -221,4 +261,9 @@ class MyLongPressGesture : UILongPressGestureRecognizer {
     }
 }
 
-
+//MARK: - [extension 정의 실시 - UIDevice]
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+}

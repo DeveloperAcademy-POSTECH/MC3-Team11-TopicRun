@@ -7,10 +7,12 @@
 
 import UIKit
 import HealthKit
-
+import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    lazy var persistentContainer = CDModel()
+    
     var healthStore : HKHealthStore!;
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -48,3 +50,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+// MARK: CoreData class
+class CDModel {
+    
+    let container : NSPersistentContainer
+    
+    @Published var savedEntities : [Info] = []
+    
+    init(){
+        container = NSPersistentContainer(name: "CoreDataModel")
+        
+        container.loadPersistentStores{ (description, error) in
+            if let error = error {
+                
+                print("ERROR LOADING CORE DATA \(error)")
+            } else {
+                print(self.container.managedObjectModel.configurations)
+                print("Success")
+                print(description)
+            }
+        }
+        fetchTopic()
+    }
+    
+    func fetchTopic(){
+        let request = NSFetchRequest<Info>(entityName: "Info")
+        do{
+            savedEntities = try container.viewContext.fetch(request)
+        } catch let error{
+            print("Error Fetching. \(error)")
+        }
+    }
+
+    func addTopic(keyword : String, topic : String){
+        
+        let topics = Info(context: container.viewContext)
+        
+        if keyword.isEmpty {
+            topics.keyword = "No keyword"
+        } else{
+            topics.keyword = keyword
+
+        }
+        if topic.isEmpty{
+            topics.topic = "No topic"
+        } else{
+            topics.topic = topic
+        }
+        
+        topics.date = .now
+        topics.index = Int16(savedEntities.endIndex)
+        
+        saveData()
+    }
+    
+    
+    func saveData(){
+        do {
+            try container.viewContext.save()
+            fetchTopic()
+        }catch let error{
+            print("Error Saving. \(error)")
+        }
+    }
+
+    func deleteTopic(indexset : IndexSet){
+        guard let index = indexset.first else {return}
+        let entity = self.savedEntities[index]
+        container.viewContext.delete(entity)
+        saveData()
+    }
+}
