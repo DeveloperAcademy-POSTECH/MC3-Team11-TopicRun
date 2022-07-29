@@ -4,7 +4,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="keyword" optional="YES" attributeType="String"/>
-        <attribute name="runtime" optional="YES" attributeType="String"/>
+        <attribute name="runtimes" optional="YES" attributeType="String"/>
         <attribute name="topic" optional="YES" attributeType="String"/>
     </entity>
     <elements>
