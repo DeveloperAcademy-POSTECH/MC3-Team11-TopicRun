@@ -24,6 +24,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var userLocationButton: UIButton!
     @IBOutlet var backButton: UIButton!
     
+    @IBOutlet weak var heartRateLabel: UILabel!
     private var isStart = false
     
     @IBAction func goBack(_ sender: Any) {
