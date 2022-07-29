@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5vk-Lx-fqk">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -65,7 +65,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="topicRunButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0GG-rN-Vmz"/>
-                                    <segue destination="cyI-cB-M1b" kind="show" id="4d2-hd-4Na"/>
+                                    <segue destination="cyI-cB-M1b" kind="push" id="4d2-hd-4Na"/>
                                 </connections>
                             </button>
                             <skView contentMode="scaleToFill" sceneName="AnimatedIphoneHearts.sks" translatesAutoresizingMaskIntoConstraints="NO" id="wbe-Lv-L4j">
@@ -92,6 +92,7 @@
                             <constraint firstItem="wbe-Lv-L4j" firstAttribute="top" secondItem="Iam-IN-1LP" secondAttribute="bottom" constant="22" id="yvp-JK-seQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dy8-z9-8nW"/>
                     <connections>
                         <outlet property="NicknameTextField" destination="yKb-LA-H2h" id="Q7u-nS-U5f"/>
                         <outlet property="heartRateLabel" destination="7Z2-sV-alm" id="tDT-9T-mD6"/>
@@ -101,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="105.21327014218009"/>
+            <point key="canvasLocation" x="989.23076923076917" y="105.21327014218009"/>
         </scene>
         <!--MapStoryBoard-->
         <scene sceneID="bpr-Ov-FiV">
@@ -111,7 +112,25 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaa-vB-QfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="105"/>
+            <point key="canvasLocation" x="1843.8461538461538" y="104.50236966824644"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NDF-Tv-cig">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5vk-Lx-fqk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTJ-ey-eLl">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Gh3-gm-JnL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OD8-sk-g32" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="105.21327014218009"/>
         </scene>
     </scenes>
     <resources>

@@ -10,12 +10,17 @@ import AVFoundation
 import SpriteKit
 import HealthKit
 import WatchConnectivity
+
 class HeartBeatViewController: BottomSheetViewController {
 //MARK: - private 변수 생성
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     //bpm 숫자
-    var bpm: Int {60}
+
+    var bpm = 0
+    var session = WCSession.default
+    var timer = Timer()
+
     // HeartBeatView
     private lazy var heartBeatView: SKView = {
         let view = SKView()
@@ -26,6 +31,7 @@ class HeartBeatViewController: BottomSheetViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
     //alertview
     private lazy var alertView: UIView = {
         let view = UIView()
@@ -75,7 +81,7 @@ class HeartBeatViewController: BottomSheetViewController {
     // bpmLabel
     private lazy var bpmLabel: UILabel = {
         let text = UILabel()
-        text.text = "\(bpm) / 120"
+        text.text = "- - / 120 BPM"
         text.font = UIFont(name: "Helvetica Neue", size: 28)
         text.font = .systemFont(ofSize: 28, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -148,6 +154,8 @@ class HeartBeatViewController: BottomSheetViewController {
         longpress.minimumPressDuration = 0.5
         stopButton.addGestureRecognizer(longpress)
         stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
+        collectHeartRate()
+        
         changeText()
         let tap = UITapGestureRecognizer(target: self, action: #selector(touchSaveTest(_:)))
         heartBeatView.addGestureRecognizer(tap)
@@ -185,15 +193,54 @@ extension HeartBeatViewController {
                 self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: nil)
             hideBottomSheet()
+            
+            workOutStop()
+            
         default:
             return
         }
     }
+
+    
+    private func isReachable() -> Bool {
+        return session.isReachable
+    }
+    
+    func workOutStop() {
+        // AppleWatch에 [WorkOut 세션 종료] 명령 메시지 전달
+        if self.isReachable() {
+            do {
+                timer.invalidate()
+                try self.session.updateApplicationContext(["action": "stop"])
+            } catch {
+                print("error")
+            }
+        } else {
+            print("AppleWatch is not reachable...!")
+        }
+    }
+    
+    // 심박수 가져오고 Label 업데이트
+    func collectHeartRate() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if HKHealthStore.isHealthDataAvailable() {
+                if WCSession.isSupported() {
+                    if let heartValue = WCSession.default.receivedApplicationContext["request"] {
+                        print("HeartBeatViewController: \(WCSession.default.receivedApplicationContext)")
+                        self.bpmLabel.text = "\(heartValue) / 120 BPM"
+                    } else {
+                        self.bpmLabel.text = "- - / 120 BPM"
+                    }
+                }
+            }
+        })
+
     @objc private func touchSaveTest(_ gesture: UITapGestureRecognizer) {
 //        appDelegate.persistentContainer.addTopic(keyword: "나 돌아갈래", topic: "으ㅏ아아아")
         let vc = FinalBottomViewController()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false)
+
     }
 }
 //MARK: - override of BottomSheetVC
@@ -213,6 +260,7 @@ class MyLongPressGesture : UILongPressGestureRecognizer {
         }, completion: nil)
     }
 }
+
 //MARK: - [extension 정의 실시 - UIDevice]
 extension UIDevice {
     static func vibrate() {

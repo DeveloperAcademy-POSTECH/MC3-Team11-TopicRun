@@ -24,29 +24,20 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     var heartRateQuery:HKQuery?
     
     // WCSession 프로퍼티 선언
-    private var session = WCSession.default
+    var session = WCSession.default
     var timer = Timer()
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // AppleWatch에 [WorkOut 세션 시작] 명령 메시지 전달
         do {
             try self.session.updateApplicationContext(["action": "start"])
         } catch {
             print("error")
         }
         
-        // AppleWatch에 [WorkOut 세션 시작 / 종료] 명령 메시지 전달
-        if self.isReachable() {
-            do {
-                try self.session.updateApplicationContext(["action": "start"])
-            } catch {
-                print("error")
-            }
-        } else {
-            print("AppleWatch is not reachable...!")
-        }
     }
     
     
@@ -61,17 +52,6 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
         
         collectHeartRate()
         
-        // AppleWatch에 [WorkOut 세션 시작 / 종료] 명령 메시지 전달
-        if self.isReachable() {
-            do {
-                try self.session.updateApplicationContext(["action": "start"])
-            } catch {
-                print("error")
-            }
-        } else {
-            print("AppleWatch is not reachable...!")
-        }
-        
         // 키보드 사용 관련
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -83,6 +63,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func topicRunButtonPressed(_ sender: UIButton) {
+        timer.invalidate()
     }
     
     
@@ -92,7 +73,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
             if HKHealthStore.isHealthDataAvailable() {
                 if WCSession.isSupported() {
                     if let heartValue = WCSession.default.receivedApplicationContext["request"] {
-                        print(WCSession.default.receivedApplicationContext)
+                        print("StartPageViewController: \(WCSession.default.receivedApplicationContext)")
                         self.heartRateLabel.text = "\(heartValue)"
                     } else {
                         self.heartRateLabel.text = "- -"
