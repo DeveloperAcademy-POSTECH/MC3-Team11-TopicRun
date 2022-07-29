@@ -187,7 +187,6 @@ extension HeartBeatViewController {
     @objc private func stopLong(_ gesture : MyLongPressGesture) {
         switch gesture.state {
         case.began:
-//            appDelegate.persistentContainer.addTopic(keyword: "done", topic: "done")
             UIDevice.vibrate()
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
                 self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
