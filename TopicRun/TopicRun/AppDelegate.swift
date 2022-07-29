@@ -8,12 +8,14 @@
 import UIKit
 import HealthKit
 import CoreData
+import WatchConnectivity
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentContainer = CDModel()
     
     var healthStore : HKHealthStore!;
+    var session = WCSession.default
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -47,7 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+        // AppleWatch에 [WorkOut 세션 종료] 명령 메시지 전달
+        do {
+            try self.session.updateApplicationContext(["action": "stop"])
+        } catch {
+            print("error")
+        }
+    }
 }
 
 // MARK: CoreData class
@@ -121,3 +131,5 @@ class CDModel {
         saveData()
     }
 }
+
+

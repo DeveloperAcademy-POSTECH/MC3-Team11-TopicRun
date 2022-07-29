@@ -7,12 +7,17 @@
 
 import UIKit
 import MapKit
+import WatchConnectivity
+import HealthKit
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    // 시간 표시용 타이머
     var timer: Timer = Timer()
+    var heartTimer: Timer = Timer()
     var count: Int = 0
+    
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
@@ -25,11 +30,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var backButton: UIButton!
     
     @IBOutlet weak var heartRateLabel: UILabel!
+    
     private var isStart = false
+    
+
+    private var regions = [String: MapMarker]()
+
+    var session = WCSession.default
+
     
     @IBAction func goBack(_ sender: Any) {
         // 뒤로 가기 버튼
         self.navigationController?.popViewController(animated: true)
+        
+        // AppleWatch에 [WorkOut 세션 종료] 명령 메시지 전달
+        do {
+            try self.session.updateApplicationContext(["action": "stop"])
+        } catch {
+            print("error")
+        }
     }
     
     
@@ -52,8 +71,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         //36.014986
         //129.325184
-        
-        
         
         runButton.layer.cornerRadius = 20
         runButton.setTitle("Topic Run!", for: .normal)
@@ -79,19 +96,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         // 첫 번째 마커
         mapView.delegate = self
-        let firstPlace = MapMarker(keyword: ["건강","운세","돈"], subject: "건강 운세로 돈을 벌어라.", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false)
+        let firstPlace = MapMarker(keyword: ["건강", "스케줄"], subject: "수면패턴을 활용한 스케줄 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false, topicImageName: "baby06")
         
         //36.012986
         //129.325784
         
         // 두 번째 마커
-        let secondPlace = MapMarker(keyword: ["매미","여름","얼음"], subject: "여름에 매미에게 얼음을 보여주자", coordinate: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), isVisit: false)
+        let secondPlace = MapMarker(keyword: ["물", "습도"], subject: "습도에 따른 물 복용량 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.012086, longitude: 129.326384), isVisit: false, topicImageName: "baby01")
+        
+        let thirdPlace = MapMarker(keyword: ["공부","건강"], subject: "공부 시간을 입력받아 분석해서 건강한 루틴을 만들어주는 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.0128, longitude: 129.321), isVisit: false, topicImageName: "baby02")
+        
+        let fourthPlace = MapMarker(keyword: ["결정", "음식"], subject: "랜덤으로 음식점을 골라주는 앱", coordinate: CLLocationCoordinate2D(latitude: 36.0069, longitude: 129.3277), isVisit: false, topicImageName: "baby03")
         
         
         
         // 지오펜스 설정.
-        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012986, longitude: 129.325784), identifier: "second")
+        // 첫 번째.
         monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), identifier: "first")
+        
+        // 두 번째.
+        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.012086, longitude: 129.326384), identifier: "second")
+        
+        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.0128, longitude: 129.321), identifier: "third")
+        
+        monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: 36.0069, longitude: 129.3277), identifier: "fourth")
         
         // 위치 권한 사용자에게 묻기.
         locationManager.requestAlwaysAuthorization()
@@ -143,6 +171,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // 토픽 마커 추가.
         mapView.addAnnotation(firstPlace)
         mapView.addAnnotation(secondPlace)
+        mapView.addAnnotation(thirdPlace)
+        mapView.addAnnotation(fourthPlace)
+        
+        regions["first"] = firstPlace
+        regions["second"] = secondPlace
+        regions["third"] = thirdPlace
+        regions["fourth"] = fourthPlace
         
         // back button hide.
         // 뒤로 가기 버튼 숨김
@@ -160,7 +195,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @objc private func buttonAction(){
         let bottomSheetVC = FindTopicViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
+        bottomSheetVC.markerInfo = regions["first"]
+        bottomSheetVC.mapTimer = timer
         self.present(bottomSheetVC, animated: false, completion: nil)
+        view.endEditing(true)
     }
     func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String) {
         
@@ -190,6 +228,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //            present(alert, animated: true)
             let bottomSheetVC = FindTopicViewController()
             bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.markerInfo = regions[identifier]
+            
             self.present(bottomSheetVC, animated: false, completion: nil)
         }
     }
@@ -215,6 +255,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         timeString += ":"
         timeString += String(format: "%02d", seconds)
         return timeString
+    }
+    
+// MARK: - 1초마다 HeartRate 데이터 수집
+    func collectHeartRate() {
+        self.heartTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if HKHealthStore.isHealthDataAvailable() {
+                if WCSession.isSupported() {
+                    if let heartValue = WCSession.default.receivedApplicationContext["request"] {
+                        print("MapViewController: \(WCSession.default.receivedApplicationContext)")
+                        self.heartRateLabel.text = "\(heartValue)"
+                    } else {
+                        self.heartRateLabel.text = "- -"
+                    }
+                }
+            }
+        })
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -247,13 +303,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         willRunView.isHidden = true
         didRunView.isHidden = false
         
-        
-        
+        collectHeartRate()
     }
     @IBAction func clickStopButton(_ sender: Any) {
         
         isStart = false
         timer.invalidate()
+        heartTimer.invalidate()
         self.count = 0
         willRunView.isHidden = false
         didRunView.isHidden = true
