@@ -37,7 +37,7 @@ class FinalBottomViewController: BottomSheetViewController {
             let text = UILabel()
             text.textColor = UIColor(named: "Keyword")
             text.textAlignment = .center
-            text.text = "# 건강 # 스케줄"
+            text.text = ""
             text.font = UIFont(name: "Helvetica Neue", size: 20)
             text.font = .systemFont(ofSize: 20, weight: .bold)
             text.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +48,7 @@ class FinalBottomViewController: BottomSheetViewController {
     private lazy var topic: UILabel = {
         let text = UILabel()
         text.textAlignment = .center
-        text.text = "수면패턴을 활용한 스케줄앱"
+        text.text = ""
         text.font = UIFont(name: "Helvetica Neue", size: 24)
         text.font = .systemFont(ofSize: 24, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -63,9 +63,11 @@ class FinalBottomViewController: BottomSheetViewController {
             closedButton.isUserInteractionEnabled = true
             xmarkView.tintColor = .white
             super.viewDidLoad()
-            //
+            keyword.text = "#" + " " + markerInfo.keyword[0] + " " + "#" + " " + markerInfo.keyword[1]
+            topic.text = markerInfo.subject
             dimmedView.removeFromSuperview()
             indicatorView.removeFromSuperview()
+            developButton.addTarget(self, action: #selector(saveTopic), for: .touchUpInside)
         }
     override func viewWillAppear(_ animated: Bool) {
     }
@@ -112,6 +114,14 @@ class FinalBottomViewController: BottomSheetViewController {
                 developButton.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor)
             ])
         }
+    @objc private func saveTopic() {
+        let vc = CollectionVC()
+        mapTimer.invalidate()
+        print(timerText.text!)
+        appDelegate.persistentContainer.addTopic(keyword: keyword.text!, topic: topic.text!, runtime: timerText.text!)
+//        vc.modalPresentationStyle = .overFullScreen
+//        self.present(vc, animated: false)
+    }
 }
 
 extension FinalBottomViewController: ContainsButton{

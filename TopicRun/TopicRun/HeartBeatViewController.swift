@@ -47,9 +47,8 @@ class HeartBeatViewController: BottomSheetViewController {
         text.textColor = .black
         text.textAlignment = .center
         text.numberOfLines = 1
-        text.text = "Stop 버튼을 길게 누르면 00이 종료됩니다."
+        text.text = "Stop 버튼을 길게 누르면 주제 선정이 종료됩니다."
         text.font = UIFont(name: "Helvetica Neue", size: 18)
-        text.font = .systemFont(ofSize: 18, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -72,7 +71,7 @@ class HeartBeatViewController: BottomSheetViewController {
         let text = UILabel()
         text.textColor = UIColor(named: "Keyword")
         text.textAlignment = .center
-        text.text = "# 건강 # 스케줄"
+        text.text = ""
         text.font = UIFont(name: "Helvetica Neue", size: 20)
         text.font = .systemFont(ofSize: 20, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -155,7 +154,7 @@ class HeartBeatViewController: BottomSheetViewController {
         stopButton.addGestureRecognizer(longpress)
         stopButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
         collectHeartRate()
-        // keyword.text = markerInfo.subject
+        keyword.text = "#" + " " + markerInfo.keyword[0] + " " + "#" + " " + markerInfo.keyword[1]
         changeText()
         let tap = UITapGestureRecognizer(target: self, action: #selector(touchSaveTest(_:)))
         heartBeatView.addGestureRecognizer(tap)
@@ -187,7 +186,6 @@ extension HeartBeatViewController {
     @objc private func stopLong(_ gesture : MyLongPressGesture) {
         switch gesture.state {
         case.began:
-//            appDelegate.persistentContainer.addTopic(keyword: "done", topic: "done")
             UIDevice.vibrate()
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
                 self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -242,6 +240,7 @@ extension HeartBeatViewController {
         vc.modalPresentationStyle = .overFullScreen
         vc.markerInfo = self.markerInfo
         vc.mapTimer = self.mapTimer
+        vc.timerText = self.timerText
         self.present(vc, animated: false)
 
     }
