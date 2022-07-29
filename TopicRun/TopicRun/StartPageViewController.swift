@@ -64,6 +64,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func topicRunButtonPressed(_ sender: UIButton) {
         timer.invalidate()
+        view.endEditing(true)
     }
     
     
