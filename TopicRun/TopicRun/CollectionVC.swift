@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class CollectionVC: UIViewController {
+    @IBOutlet var NickName: UILabel!
     let data = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var TopicImage: UIImageView!
@@ -63,6 +64,7 @@ class CollectionVC: UIViewController {
             return calendar.dateComponents([.day], from: date, to: currentDate).day! + 1
         }
         
+        let trials = trial + 1
         
         
         TopicTitle.text = topic
@@ -70,7 +72,8 @@ class CollectionVC: UIViewController {
         StartDate.text = str
         RunTime.text = String(daysCount)
         WalkTime.text = runtime
-        TopicTrial.text = String(trial)
+        TopicTrial.text = String(trials)
+        NickName.text = UserDefaults.standard.string(forKey: "nickName")
         
     }
     
