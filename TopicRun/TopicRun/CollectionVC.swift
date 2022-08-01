@@ -47,17 +47,29 @@ class CollectionVC: UIViewController {
         let topic = data.persistentContainer.savedEntities[0].topic
         let date = data.persistentContainer.savedEntities[0].date
         
+        let currentDate = Date()
+        let calendar = Calendar.current
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let str = dateFormatter.string(from: date!)
+        
+        var daysCount:Int = 0
+        
+        daysCount = days(from: date!)
+
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day! + 1
+        }
         
         
         
         TopicTitle.text = topic
         TopicHashTage.text = keyword
         StartDate.text = str
+        RunTime.text = String(daysCount)
         
     }
+    
     @IBAction func AddTopicButton(_ sender: Any) {
     }
     

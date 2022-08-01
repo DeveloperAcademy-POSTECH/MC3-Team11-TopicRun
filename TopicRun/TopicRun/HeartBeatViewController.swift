@@ -25,8 +25,9 @@ class HeartBeatViewController: BottomSheetViewController {
     private lazy var heartBeatView: SKView = {
         let view = SKView()
         let scene = SKScene(fileNamed: "AnimatedIphoneHearts.sks")
+        scene?.backgroundColor = UIColor.clear
         view.backgroundColor = .clear
-        
+        scene?.size = CGSize(width: 20, height: 20)
         view.presentScene(scene)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -47,7 +48,7 @@ class HeartBeatViewController: BottomSheetViewController {
         text.textColor = .black
         text.textAlignment = .center
         text.numberOfLines = 1
-        text.text = "Stop 버튼을 길게 누르면 주제 선정이 종료됩니다."
+        text.text = "Stop 버튼을 길게 누르면 선정이 종료됩니다."
         text.font = UIFont(name: "Helvetica Neue", size: 18)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -75,6 +76,7 @@ class HeartBeatViewController: BottomSheetViewController {
         text.font = UIFont(name: "Helvetica Neue", size: 20)
         text.font = .systemFont(ofSize: 20, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.backgroundColor = .clear
         return text
     }()
     // bpmLabel
@@ -108,10 +110,9 @@ class HeartBeatViewController: BottomSheetViewController {
         // heartBeatView
         NSLayoutConstraint.activate([
             heartBeatView.centerXAnchor.constraint(equalTo: bottomSheetView.centerXAnchor),
-            heartBeatView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 60),
-            heartBeatView.bottomAnchor.constraint(equalTo: bpmLabel.topAnchor, constant: -10),
-            heartBeatView.heightAnchor.constraint(equalToConstant: 63),
-            heartBeatView.widthAnchor.constraint(equalToConstant: 63)
+            heartBeatView.bottomAnchor.constraint(equalTo: bpmLabel.topAnchor, constant: 10),
+            heartBeatView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+            heartBeatView.widthAnchor.constraint(greaterThanOrEqualToConstant: 100)
         ])
         // bpmLabel
         NSLayoutConstraint.activate([
