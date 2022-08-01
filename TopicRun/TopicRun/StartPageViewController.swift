@@ -22,6 +22,8 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     var session = WCSession.default
     var timer = Timer()
     
+    // userDefaults 기본 객체 참조
+    let userDefaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +55,9 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
         NicknameTextField?.delegate = self
         topicRunButton?.isEnabled = false
         topicRunButton?.alpha = 0.5
+        
+        let myUser:String = UserDefaults.standard.string(forKey: "nickName") ?? ""
+        NicknameTextField.text = myUser
     }
     
     
@@ -65,6 +70,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
 //            print("error")
 //        }
         view.endEditing(true)
+        userDefaults.set(NicknameTextField.text, forKey: "nickName")
     }
     
     
