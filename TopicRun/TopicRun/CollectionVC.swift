@@ -10,6 +10,7 @@ import UIKit
 import WatchConnectivity
 
 class CollectionVC: UIViewController {
+    @IBOutlet var NickName: UILabel!
     let data = UIApplication.shared.delegate as! AppDelegate
     var session = WCSession.default
     
@@ -65,6 +66,7 @@ class CollectionVC: UIViewController {
             return calendar.dateComponents([.day], from: date, to: currentDate).day! + 1
         }
         
+        let trials = trial + 1
         
         
         TopicTitle.text = topic
@@ -72,8 +74,11 @@ class CollectionVC: UIViewController {
         StartDate.text = str
         RunTime.text = String(daysCount)
         WalkTime.text = runtime
-        TopicTrial.text = String(trial)
+
+        TopicTrial.text = String(trials)
+        NickName.text = UserDefaults.standard.string(forKey: "nickName")
         
+
     }
     
     @IBAction func AddTopicButton(_ sender: Any) {
