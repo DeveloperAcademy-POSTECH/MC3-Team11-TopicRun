@@ -31,32 +31,23 @@
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby06" translatesAutoresizingMaskIntoConstraints="NO" id="M4N-Oc-5aK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="556"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fsfffsfsfsfs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1K-pb-qsA">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1K-pb-qsA">
                                                                 <rect key="frame" x="20" y="15" width="200" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="200" id="Kqo-WQ-bcZ"/>
                                                                     <constraint firstAttribute="height" constant="40" id="kfd-Gp-1Mc"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDY-OQ-D0U">
-                                                                <rect key="frame" x="8" y="485" width="300" height="24"/>
+                                                                <rect key="frame" x="20" y="485" width="300" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="300" id="RYO-If-6JT"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaP-3U-8Sx">
-                                                                <rect key="frame" x="8" y="520" width="300" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="300" id="ReE-9d-b58"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUt-eb-jDh">
@@ -143,6 +134,15 @@
                                                                     <constraint firstItem="suB-CH-K26" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="20" id="yGb-Mm-4tH"/>
                                                                 </constraints>
                                                             </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaP-3U-8Sx">
+                                                                <rect key="frame" x="14" y="517" width="300" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="300" id="ReE-9d-b58"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -154,9 +154,9 @@
                                                             <constraint firstAttribute="bottom" secondItem="UaP-3U-8Sx" secondAttribute="bottom" constant="212" id="Lyu-Ns-vse"/>
                                                             <constraint firstItem="UUt-eb-jDh" firstAttribute="top" secondItem="M4N-Oc-5aK" secondAttribute="bottom" id="PSe-Gz-CqQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="M4N-Oc-5aK" secondAttribute="trailing" id="TbS-Dz-ddu"/>
-                                                            <constraint firstItem="UaP-3U-8Sx" firstAttribute="leading" secondItem="NeW-2n-c5v" secondAttribute="leading" constant="8" id="b3n-Kk-faQ"/>
+                                                            <constraint firstItem="UaP-3U-8Sx" firstAttribute="leading" secondItem="NeW-2n-c5v" secondAttribute="leading" constant="20" id="b3n-Kk-faQ"/>
                                                             <constraint firstItem="UUt-eb-jDh" firstAttribute="centerX" secondItem="NeW-2n-c5v" secondAttribute="centerX" id="xDc-kX-Rqe"/>
-                                                            <constraint firstItem="XDY-OQ-D0U" firstAttribute="leading" secondItem="NeW-2n-c5v" secondAttribute="leading" constant="8" id="yYZ-4D-los"/>
+                                                            <constraint firstItem="XDY-OQ-D0U" firstAttribute="leading" secondItem="NeW-2n-c5v" secondAttribute="leading" constant="20" id="yYZ-4D-los"/>
                                                             <constraint firstItem="O1K-pb-qsA" firstAttribute="top" secondItem="NeW-2n-c5v" secondAttribute="top" constant="15" id="zYP-nq-PZz"/>
                                                         </constraints>
                                                     </view>
