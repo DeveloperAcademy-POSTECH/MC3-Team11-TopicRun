@@ -46,6 +46,7 @@ class CollectionVC: UIViewController {
         let keyword = data.persistentContainer.savedEntities[0].keyword
         let topic = data.persistentContainer.savedEntities[0].topic
         let date = data.persistentContainer.savedEntities[0].date
+        let runtime = data.persistentContainer.savedEntities[0].runtime
         
         let currentDate = Date()
         let calendar = Calendar.current
@@ -67,6 +68,7 @@ class CollectionVC: UIViewController {
         TopicHashTage.text = keyword
         StartDate.text = str
         RunTime.text = String(daysCount)
+        WalkTime.text = runtime
         
     }
     
