@@ -198,6 +198,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         bottomSheetVC.markerInfo = regions["first"]
         bottomSheetVC.mapTimer = timer
         bottomSheetVC.timerText = timerLabel
+        
+        let markerInfo = regions["first"]
+        
+        mapView.removeAnnotation(markerInfo!)
+        locationManager.stopMonitoring(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: markerInfo!.coordinate.latitude, longitude: markerInfo!.coordinate.longitude), radius: CLLocationDistance(1), identifier: "first"))
         self.present(bottomSheetVC, animated: false, completion: nil)
         view.endEditing(true)
     }
