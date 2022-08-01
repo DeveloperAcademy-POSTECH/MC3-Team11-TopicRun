@@ -228,8 +228,8 @@ extension HeartBeatViewController {
                 if WCSession.isSupported() {
                     if let heartValue = WCSession.default.receivedApplicationContext["request"] {
                         print("HeartBeatViewController: \(WCSession.default.receivedApplicationContext)")
-                        self.bpmLabel.text = "\(heartValue) / 120 BPM"
-                        if heartValue as! Int >= 90 && self.able == false {
+                        self.bpmLabel.text = "\(heartValue) / 100 BPM"
+                        if heartValue as! Int >= 100 && self.able == false {
                             self.able.toggle()
                             let vc = FinalBottomViewController()
                             vc.modalPresentationStyle = .overFullScreen
@@ -239,7 +239,7 @@ extension HeartBeatViewController {
                             self.present(vc, animated: false)
                         }
                     } else {
-                        self.bpmLabel.text = "- - / 120 BPM"
+                        self.bpmLabel.text = "- - / 100 BPM"
                     }
                 }
             }
