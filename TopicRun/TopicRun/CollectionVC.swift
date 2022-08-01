@@ -69,7 +69,7 @@ class CollectionVC: UIViewController {
         StartDate.text = str
         RunTime.text = String(daysCount)
         WalkTime.text = runtime
-        
+        TopicTrial.text = "1"
     }
     
     @IBAction func AddTopicButton(_ sender: Any) {
