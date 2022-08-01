@@ -196,7 +196,7 @@ extension HeartBeatViewController {
             hideBottomSheet()
             
             workOutStop()
-            
+            timer.invalidate()
         default:
             return
         }
@@ -254,7 +254,8 @@ extension HeartBeatViewController {
         vc.mapTimer = self.mapTimer
         vc.timerText = self.timerText
         self.present(vc, animated: false)
-
+        
+        timer.invalidate()
     }
 }
 //MARK: - override of BottomSheetVC
