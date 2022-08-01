@@ -16,7 +16,7 @@ class HeartBeatViewController: BottomSheetViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     //bpm 숫자
-
+    var able = false
     var bpm = 0
     var session = WCSession.default
     var timer = Timer()
@@ -192,6 +192,7 @@ extension HeartBeatViewController {
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9,options: .curveEaseInOut, animations: {
                 self.view?.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: nil)
+            UIDevice.vibrate()
             hideBottomSheet()
             
             workOutStop()
@@ -228,7 +229,8 @@ extension HeartBeatViewController {
                     if let heartValue = WCSession.default.receivedApplicationContext["request"] {
                         print("HeartBeatViewController: \(WCSession.default.receivedApplicationContext)")
                         self.bpmLabel.text = "\(heartValue) / 120 BPM"
-                        if heartValue as! Int >= 120 {
+                        if heartValue as! Int >= 90 && self.able == false {
+                            self.able.toggle()
                             let vc = FinalBottomViewController()
                             vc.modalPresentationStyle = .overFullScreen
                             vc.markerInfo = self.markerInfo
