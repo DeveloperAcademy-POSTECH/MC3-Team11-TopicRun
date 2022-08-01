@@ -47,6 +47,7 @@ class CollectionVC: UIViewController {
         let topic = data.persistentContainer.savedEntities[0].topic
         let date = data.persistentContainer.savedEntities[0].date
         let runtime = data.persistentContainer.savedEntities[0].runtime
+        let trial = data.persistentContainer.savedEntities[0].index
         
         let currentDate = Date()
         let calendar = Calendar.current
@@ -69,7 +70,7 @@ class CollectionVC: UIViewController {
         StartDate.text = str
         RunTime.text = String(daysCount)
         WalkTime.text = runtime
-        TopicTrial.text = "1"
+        TopicTrial.text = String(trial)
     }
     
     @IBAction func AddTopicButton(_ sender: Any) {
