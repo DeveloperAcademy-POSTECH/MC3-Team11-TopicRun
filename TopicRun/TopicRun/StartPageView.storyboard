@@ -11,7 +11,6 @@
         <!--StartPageView-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="StartPage" title="StartPageView" id="Y6W-OH-hqX" customClass="StartPageViewController" customModule="TopicRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -101,6 +100,7 @@
                         <outlet property="topicRunButton" destination="zIC-Eu-CZA" id="N74-a8-lIG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="989.23076923076917" y="105.21327014218009"/>
         </scene>

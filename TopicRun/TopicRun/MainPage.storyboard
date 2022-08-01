@@ -11,7 +11,7 @@
         <!--CollectionVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="CollectionVC" customModule="TopicRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionVC" id="Y6W-OH-hqX" customClass="CollectionVC" customModule="TopicRun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yR4-VG-y4Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,9 +115,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suB-CH-K26">
-                                                                        <rect key="frame" x="29" y="149" width="100" height="23"/>
+                                                                        <rect key="frame" x="20" y="149" width="120" height="23"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="100" id="19Y-qB-0NT"/>
+                                                                            <constraint firstAttribute="width" constant="120" id="19Y-qB-0NT"/>
                                                                             <constraint firstAttribute="height" constant="23" id="pk5-Hr-54i"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -140,7 +140,7 @@
                                                                     <constraint firstItem="4uK-8J-uI9" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="64" id="gcf-rh-YDk"/>
                                                                     <constraint firstAttribute="height" constant="190" id="oGz-XS-59a"/>
                                                                     <constraint firstItem="4uK-8J-uI9" firstAttribute="top" secondItem="qkY-Bg-qBt" secondAttribute="bottom" constant="6" id="p7U-0l-HoH"/>
-                                                                    <constraint firstItem="suB-CH-K26" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="29" id="yGb-Mm-4tH"/>
+                                                                    <constraint firstItem="suB-CH-K26" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="20" id="yGb-Mm-4tH"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -274,7 +274,7 @@
                         <outlet property="RunTime" destination="eLI-yw-fev" id="StP-f3-q3a"/>
                         <outlet property="StartDate" destination="suB-CH-K26" id="wV8-4v-NPJ"/>
                         <outlet property="TopicHashTage" destination="UaP-3U-8Sx" id="RrL-fG-son"/>
-                        <outlet property="TopicImage" destination="M4N-Oc-5aK" id="Rsd-Ma-YCF"/>
+                        <outlet property="TopicImage" destination="M4N-Oc-5aK" id="cHM-LB-ESa"/>
                         <outlet property="TopicTitle" destination="XDY-OQ-D0U" id="afz-tm-vQ7"/>
                         <outlet property="TopicTrial" destination="4uK-8J-uI9" id="uEQ-Mo-CXN"/>
                         <outlet property="WalkTime" destination="O94-ae-MlT" id="PJo-Xb-WxS"/>

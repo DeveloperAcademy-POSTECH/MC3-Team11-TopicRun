@@ -115,13 +115,17 @@ class FinalBottomViewController: BottomSheetViewController {
             ])
         }
     @objc private func saveTopic() {
-        let vc = CollectionVC()
+//        let vc = CollectionVC()
         mapTimer?.invalidate()
-        
         print(timerText.text!)
         appDelegate.persistentContainer.addTopic(keyword: keyword.text!, topic: topic.text!, runtime: timerText.text!)
 //        vc.modalPresentationStyle = .overFullScreen
-//        self.present(vc, animated: false)
+        
+        let viewController = UIStoryboard(name: "MainPage", bundle: nil)
+            .instantiateViewController(withIdentifier: "CollectionVC") as? CollectionVC
+        viewController?.modalPresentationStyle = .overFullScreen
+        viewController?.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.present(viewController!, animated: false)
     }
 }
 
@@ -136,6 +140,7 @@ extension FinalBottomViewController: ContainsButton{
     }
 
     @objc func buttonClosed() {
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false)
         hideBottomSheet()
     }
 }

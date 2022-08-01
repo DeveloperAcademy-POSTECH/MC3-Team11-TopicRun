@@ -12,7 +12,7 @@ import HealthKit
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-    
+    let userDefaults = UserDefaults.standard
     // 시간 표시용 타이머
     var timer: Timer = Timer()
     var heartTimer: Timer = Timer()
@@ -189,6 +189,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
     }
     
     
