@@ -50,6 +50,7 @@ class HeartBeatViewController: BottomSheetViewController {
         text.numberOfLines = 1
         text.text = "Stop 버튼을 길게 누르면 선정이 종료됩니다."
         text.font = UIFont(name: "Helvetica Neue", size: 18)
+        text.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
