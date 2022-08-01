@@ -13,6 +13,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var sceneInterface: WKInterfaceSKScene!
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
+    @IBOutlet var workOutStateLabel: WKInterfaceLabel!
     
     // WCSession 프로퍼티 선언
     private var session = WCSession.default
@@ -29,7 +30,7 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        runWorkOut()
+        
         receiveMessage()
     }
     
@@ -134,17 +135,21 @@ class InterfaceController: WKInterfaceController {
     private func receiveMessage() {
         authorization { (success, healthkit) in
             
-            self.healthStore =  healthkit;
+            self.healthStore =  healthkit
             if(success){
         if WCSession.isSupported() {
+            print(WCSession.default.receivedApplicationContext)
             if let sendedWord = WCSession.default.receivedApplicationContext["action"] as? String {
                 print(sendedWord)
+                // "start" 명령을 받고, workOut Session이 진행중이지 않을 때 새로운 Session 시작
                 if sendedWord == "start" && !self.workOutFlag{
-                    self.runWorkOut()
                     self.workOutFlag = true
+                    self.workOutStateLabel.setText("")
+                    self.runWorkOut()
                 } else if sendedWord == "stop" {
-                    self.stopWorkOut()
                     self.workOutFlag = false
+                    self.workOutStateLabel.setText("심박수 측정이 \n일시정지된 상태입니다")
+                    self.stopWorkOut()
                 } else {
                     print("No Action Type")
                 }
@@ -174,6 +179,10 @@ class InterfaceController: WKInterfaceController {
 extension InterfaceController: WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("activationDidCompleteWith activationState:\(activationState) error: \(String(describing: error))")
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        
     }
 }
 

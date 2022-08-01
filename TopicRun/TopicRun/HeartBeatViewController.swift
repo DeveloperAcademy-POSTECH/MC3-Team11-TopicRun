@@ -208,12 +208,12 @@ extension HeartBeatViewController {
     func workOutStop() {
         // AppleWatch에 [WorkOut 세션 종료] 명령 메시지 전달
         if self.isReachable() {
-            do {
-                timer.invalidate()
-                try self.session.updateApplicationContext(["action": "stop"])
-            } catch {
-                print("error")
-            }
+//            do {
+//                timer.invalidate()
+//                try self.session.updateApplicationContext(["action": "stop"])
+//            } catch {
+//                print("error")
+//            }
         } else {
             print("AppleWatch is not reachable...!")
         }
