@@ -72,9 +72,11 @@ class CollectionVC: UIViewController {
         StartDate.text = str
         RunTime.text = String(daysCount)
         WalkTime.text = runtime
+
         TopicTrial.text = String(trials)
         NickName.text = UserDefaults.standard.string(forKey: "nickName")
         
+
     }
     
     @IBAction func AddTopicButton(_ sender: Any) {
