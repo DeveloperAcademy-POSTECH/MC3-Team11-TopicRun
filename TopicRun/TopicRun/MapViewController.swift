@@ -63,7 +63,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     private lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("BottomSheet", for: .normal)
-        button.setTitleColor(UIColor.red, for: .normal)
+        button.setTitleColor(UIColor.clear, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -199,7 +199,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         bottomSheetVC.markerInfo = regions["first"]
         bottomSheetVC.mapTimer = timer
         bottomSheetVC.timerText = timerLabel
-        
+        UIDevice.vibrate()
         let markerInfo = regions["first"]
         
         mapView.removeAnnotation(markerInfo!)
@@ -241,6 +241,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             bottomSheetVC.modalPresentationStyle = .overFullScreen
             bottomSheetVC.markerInfo = markerInfo
             self.present(bottomSheetVC, animated: false, completion: nil)
+            UIDevice.vibrate()
         }
     }
     
