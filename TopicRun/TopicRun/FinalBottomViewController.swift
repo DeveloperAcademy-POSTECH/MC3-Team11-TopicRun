@@ -122,10 +122,10 @@ class FinalBottomViewController: BottomSheetViewController {
 //        vc.modalPresentationStyle = .overFullScreen
         
         let viewController = UIStoryboard(name: "MainPage", bundle: nil)
-            .instantiateViewController(withIdentifier: "CollectionVC") as? CollectionVC
+            .instantiateViewController(withIdentifier: "CollectionNavigation") as? UINavigationController
         viewController?.modalPresentationStyle = .overFullScreen
         viewController?.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-        self.present(viewController!, animated: false)
+        self.show(viewController!, sender: self)
     }
 }
 

@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+import WatchConnectivity
 
 class CollectionVC: UIViewController {
     @IBOutlet var NickName: UILabel!
     let data = UIApplication.shared.delegate as! AppDelegate
+    var session = WCSession.default
     
     @IBOutlet var TopicImage: UIImageView!
     @IBOutlet weak var CollectionArea: UIView!
@@ -59,7 +61,7 @@ class CollectionVC: UIViewController {
         var daysCount:Int = 0
         
         daysCount = days(from: date!)
-
+        
         func days(from date: Date) -> Int {
             return calendar.dateComponents([.day], from: date, to: currentDate).day! + 1
         }
@@ -80,6 +82,12 @@ class CollectionVC: UIViewController {
     }
     
     @IBAction func AddTopicButton(_ sender: Any) {
+        // AppleWatch에 [WorkOut 세션 시작] 명령 메시지 전달
+        do {
+            try self.session.updateApplicationContext(["action": "start"])
+        } catch {
+            print("error")
+        }
     }
     
 }
@@ -89,17 +97,17 @@ class CollectionVC: UIViewController {
         get { return layer.shadowRadius }
         set { layer.shadowRadius = newValue }
     }
-
+    
     @IBInspectable var shadowOpacity: CGFloat {
         get { return CGFloat(layer.shadowOpacity) }
         set { layer.shadowOpacity = Float(newValue) }
     }
-
+    
     @IBInspectable var shadowOffset: CGSize {
         get { return layer.shadowOffset }
         set { layer.shadowOffset = newValue }
     }
-
+    
     @IBInspectable var shadowColor: UIColor? {
         get {
             guard let cgColor = layer.shadowColor else {
