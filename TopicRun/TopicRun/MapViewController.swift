@@ -96,15 +96,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         // 첫 번째 마커
         mapView.delegate = self
-        let firstPlace = MapMarker(keyword: ["건강", "스케줄"], subject: "수면패턴을 활용한 스케줄 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false, topicImageName: "baby06")
+        let firstPlace = MapMarker(keyword: ["건강", "스케줄"], subject: "수면패턴을 활용한 스케줄 앱", coordinate: CLLocationCoordinate2D(latitude: 36.015886, longitude: 129.325184), isVisit: false, topicImageName: "baby06")
         
         //36.012986
         //129.325784
         
         // 두 번째 마커
-        let secondPlace = MapMarker(keyword: ["물", "습도"], subject: "습도에 따른 물 복용량 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.012086, longitude: 129.326384), isVisit: false, topicImageName: "baby01")
+        let secondPlace = MapMarker(keyword: ["물", "습도"], subject: "습도에 따른 물 복용량 앱", coordinate: CLLocationCoordinate2D(latitude: 36.012086, longitude: 129.326384), isVisit: false, topicImageName: "baby01")
         
-        let thirdPlace = MapMarker(keyword: ["공부","건강"], subject: "공부 시간을 입력받아 분석해서 건강한 루틴을 만들어주는 앱.", coordinate: CLLocationCoordinate2D(latitude: 36.0128, longitude: 129.321), isVisit: false, topicImageName: "baby02")
+        let thirdPlace = MapMarker(keyword: ["공부","건강"], subject: "공부 시간을 입력받아 분석해서 건강한 루틴을 만들어주는 앱", coordinate: CLLocationCoordinate2D(latitude: 36.0128, longitude: 129.321), isVisit: false, topicImageName: "baby02")
         
         let fourthPlace = MapMarker(keyword: ["결정", "음식"], subject: "랜덤으로 음식점을 골라주는 앱", coordinate: CLLocationCoordinate2D(latitude: 36.0069, longitude: 129.3277), isVisit: false, topicImageName: "baby03")
         
@@ -227,9 +227,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
 //            alert.addAction(ok)
 //            present(alert, animated: true)
+            let markerInfo = regions[identifier]
+            
+            mapView.removeAnnotation(markerInfo!)
+            locationManager.stopMonitoring(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: markerInfo!.coordinate.latitude, longitude: markerInfo!.coordinate.longitude), radius: CLLocationDistance(1), identifier: identifier))
             let bottomSheetVC = FindTopicViewController()
             bottomSheetVC.modalPresentationStyle = .overFullScreen
-            bottomSheetVC.markerInfo = regions[identifier]
+            bottomSheetVC.markerInfo = markerInfo
             self.present(bottomSheetVC, animated: false, completion: nil)
         }
     }
