@@ -60,7 +60,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUt-eb-jDh">
-                                                                <rect key="frame" x="0.0" y="556" width="374" height="190"/>
+                                                                <rect key="frame" x="14.5" y="556" width="345" height="190"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도전차수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkY-Bg-qBt">
                                                                         <rect key="frame" x="45" y="15" width="69.5" height="24"/>
@@ -69,7 +69,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="걸음 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEZ-KD-ATp">
-                                                                        <rect key="frame" x="254.5" y="15" width="74.5" height="24"/>
+                                                                        <rect key="frame" x="225.5" y="15" width="74.5" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O94-ae-MlT">
-                                                                        <rect key="frame" x="241" y="45" width="100" height="23"/>
+                                                                        <rect key="frame" x="212" y="45" width="100" height="23"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="23" id="cEl-VD-4ix"/>
                                                                             <constraint firstAttribute="width" constant="100" id="jke-7d-exv"/>
@@ -105,7 +105,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-yw-fev">
-                                                                        <rect key="frame" x="241" y="149" width="100" height="23"/>
+                                                                        <rect key="frame" x="212" y="149" width="100" height="23"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="gDD-Zc-D8a"/>
                                                                             <constraint firstAttribute="height" constant="23" id="pFe-gP-Gzq"/>
@@ -127,7 +127,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="374" id="Nvb-d0-b0S"/>
+                                                                    <constraint firstAttribute="width" constant="345" id="Nvb-d0-b0S"/>
                                                                     <constraint firstAttribute="bottom" secondItem="eLI-yw-fev" secondAttribute="bottom" constant="18" id="QVd-mk-1Jg"/>
                                                                     <constraint firstItem="qkY-Bg-qBt" firstAttribute="top" secondItem="UUt-eb-jDh" secondAttribute="top" constant="15" id="Qdi-kq-9gc"/>
                                                                     <constraint firstItem="qkY-Bg-qBt" firstAttribute="leading" secondItem="UUt-eb-jDh" secondAttribute="leading" constant="45" id="UXR-gm-GPW"/>

@@ -41,7 +41,7 @@ class CollectionVC: UIViewController {
         
         CollectionArea.layer.masksToBounds = true
         CollectionArea.layer.cornerRadius = 15
-        CollectionArea.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMinYCorner, .layerMaxXMaxYCorner)
+        CollectionArea.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
         
         // Do any additional setup after loading the view.
     }
