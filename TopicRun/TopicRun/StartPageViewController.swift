@@ -18,11 +18,6 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var heartRateLabel: UILabel!
     @IBOutlet weak var sceneInterface: SKView!
     
-    let healthStore = HKHealthStore()
-    let heartRateUnit:HKUnit = HKUnit(from: "count/min")
-    let heartRateType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-    var heartRateQuery:HKQuery?
-    
     // WCSession 프로퍼티 선언
     var session = WCSession.default
     var timer = Timer()
@@ -38,8 +33,9 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
             print("error")
         }
         
+        collectHeartRate()
+        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +45,6 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
             session.delegate = self
             session.activate()
         }
-        
-        collectHeartRate()
         
         // 키보드 사용 관련
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -64,6 +58,12 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func topicRunButtonPressed(_ sender: UIButton) {
         timer.invalidate()
+//        // AppleWatch에 [WorkOut 세션 시작] 명령 메시지 전달
+//        do {
+//            try self.session.updateApplicationContext(["action": "start"])
+//        } catch {
+//            print("error")
+//        }
         view.endEditing(true)
     }
     
@@ -147,5 +147,9 @@ extension StartPageViewController: WCSessionDelegate {
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("activationDidCompleteWith activationState:\(activationState) error: \(String(describing: error))")
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        
     }
 }

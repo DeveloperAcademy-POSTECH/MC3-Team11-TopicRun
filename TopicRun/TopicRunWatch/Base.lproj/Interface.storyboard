@@ -22,6 +22,9 @@
                                             <variation key="device=watch44mm" height="115" width="136"/>
                                             <variation key="device=watch45mm" height="120"/>
                                         </label>
+                                        <label width="136" height="53" alignment="center" verticalAlignment="bottom" textAlignment="center" numberOfLines="2" id="QVH-iz-twd" userLabel="WorkOut State Label">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
                                     </items>
                                 </group>
                             </items>
@@ -31,6 +34,7 @@
                     <connections>
                         <outlet property="heartRateLabel" destination="uoe-Jo-0z8" id="urQ-N9-88t"/>
                         <outlet property="sceneInterface" destination="KtJ-Uu-Lms" id="Rp7-7c-9Gw"/>
+                        <outlet property="workOutStateLabel" destination="QVH-iz-twd" id="ETd-da-rKx"/>
                     </connections>
                 </controller>
             </objects>
