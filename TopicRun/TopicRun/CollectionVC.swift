@@ -70,10 +70,10 @@ class CollectionVC: UIViewController {
         TopicTitle.text = topic
         TopicHashTage.text = keyword
         StartDate.text = str
-        RunTime.text = String(daysCount)
+        RunTime.text = String(daysCount) + " day"
         WalkTime.text = runtime
 
-        TopicTrial.text = String(trials)
+        TopicTrial.text = String(trials) + " 차"
         NickName.text = UserDefaults.standard.string(forKey: "nickName")
         
 
