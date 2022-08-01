@@ -12,7 +12,7 @@ import HealthKit
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-    
+    let userDefaults = UserDefaults.standard
     // 시간 표시용 타이머
     var timer: Timer = Timer()
     var heartTimer: Timer = Timer()
@@ -189,6 +189,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
     }
     
     
@@ -198,6 +199,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         bottomSheetVC.markerInfo = regions["first"]
         bottomSheetVC.mapTimer = timer
         bottomSheetVC.timerText = timerLabel
+        
+        let markerInfo = regions["first"]
+        
+        mapView.removeAnnotation(markerInfo!)
+        locationManager.stopMonitoring(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: markerInfo!.coordinate.latitude, longitude: markerInfo!.coordinate.longitude), radius: CLLocationDistance(1), identifier: "first"))
         self.present(bottomSheetVC, animated: false, completion: nil)
         view.endEditing(true)
     }
