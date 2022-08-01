@@ -183,13 +183,13 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopicRun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-hO-V5L">
-                                <rect key="frame" x="20" y="54" width="120" height="36"/>
+                                <rect key="frame" x="20" y="98" width="120" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCm-Jz-7iN">
-                                <rect key="frame" x="364" y="54" width="30" height="30"/>
+                                <rect key="frame" x="364" y="98" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="8Y8-EP-jLm"/>
                                     <constraint firstAttribute="height" constant="30" id="dmj-xv-xPl"/>
@@ -199,6 +199,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="􀅼"/>
                                 <connections>
                                     <action selector="AddTopicButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aTf-b8-ubH"/>
+                                    <segue destination="fTb-Q8-pz1" kind="show" id="etp-wH-CQg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -215,6 +216,7 @@
                             <constraint firstItem="xys-rO-9Jx" firstAttribute="leading" secondItem="yR4-VG-y4Y" secondAttribute="leading" id="yIA-Yr-Scz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Spp-Si-mDp"/>
                     <connections>
                         <outlet property="CollectionArea" destination="UUt-eb-jDh" id="nIK-8Q-EP2"/>
                         <outlet property="RunTime" destination="eLI-yw-fev" id="StP-f3-q3a"/>
@@ -227,6 +229,34 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979.71014492753636" y="91.741071428571431"/>
+        </scene>
+        <!--MapStoryBoard-->
+        <scene sceneID="6TQ-25-3ew">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MapStoryBoard" id="fTb-Q8-pz1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mRa-V8-C82"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sot-lG-0Ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t8s-Bf-DaO">
+            <objects>
+                <navigationController storyboardIdentifier="CollectionNavigation" automaticallyAdjustsScrollViewInsets="NO" id="4ak-S9-5da" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="X0W-wu-okE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="RAu-rc-ySe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1k-rU-DAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="91.741071428571431"/>
         </scene>
