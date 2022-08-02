@@ -30,6 +30,7 @@ class StartPageViewController: UIViewController, UITextFieldDelegate {
         
         // AppleWatch에 [WorkOut 세션 시작] 명령 메시지 전달
         do {
+            try self.session.updateApplicationContext(["action": "stop"])
             try self.session.updateApplicationContext(["action": "start"])
         } catch {
             print("error")

@@ -33,12 +33,17 @@
 		36DF532528852ED20099CD64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF532328852ED20099CD64 /* LaunchScreen.storyboard */; };
 		36DF53792891DFD40099CD64 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DF53782891DFD40099CD64 /* MainPage.storyboard */; };
 		36DF537B2891DFE80099CD64 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF537A2891DFE80099CD64 /* CollectionVC.swift */; };
+		CC507D752898214A006F8743 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC507D742898214A006F8743 /* OnBoardingViewController.swift */; };
+		CC507D77289821FB006F8743 /* FirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC507D76289821FB006F8743 /* FirstStepViewController.swift */; };
 		CCAA3B682887C6E000E29E3B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAA3B672887C6E000E29E3B /* HealthKit.framework */; };
 		CCAA3C262887D7C300E29E3B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAA3C252887D7C300E29E3B /* HealthKit.framework */; };
 		CCAA3C282887DA6900E29E3B /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
 		CCC27FF6289113F500468C35 /* AnimatedHearts.sks in Resources */ = {isa = PBXBuildFile; fileRef = CCC27FF5289113F500468C35 /* AnimatedHearts.sks */; };
 		CCC27FF9289116BD00468C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05756DC42887D0AF0006C2FD /* Assets.xcassets */; };
 		CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */; };
+		CCE6995D28982743001386B7 /* SecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6995C28982743001386B7 /* SecondStepViewController.swift */; };
+		CCE6995F28982750001386B7 /* ThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6995E28982750001386B7 /* ThirdStepViewController.swift */; };
+		CCE6996128982757001386B7 /* FourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6996028982757001386B7 /* FourthStepViewController.swift */; };
 		CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */; };
 		CF9D5CD1288FB19B00A3DA31 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */; };
 		CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC82CC0288989F200555C1D /* MapMarker.swift */; };
@@ -119,12 +124,17 @@
 		36DF532628852ED20099CD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DF53782891DFD40099CD64 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
 		36DF537A2891DFE80099CD64 /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
+		CC507D742898214A006F8743 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		CC507D76289821FB006F8743 /* FirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepViewController.swift; sourceTree = "<group>"; };
 		CCAA3B652887C6E000E29E3B /* TopicRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopicRun.entitlements; sourceTree = "<group>"; };
 		CCAA3B672887C6E000E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		CCAA3C242887D7C300E29E3B /* TopicRunWatch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopicRunWatch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CCAA3C252887D7C300E29E3B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CCAA3C272887DA6900E29E3B /* HeartKitAutorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartKitAutorization.swift; path = "TopicRunWatch WatchKit Extension/HeartKitAutorization.swift"; sourceTree = SOURCE_ROOT; };
 		CCC27FF5289113F500468C35 /* AnimatedHearts.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimatedHearts.sks; sourceTree = "<group>"; };
+		CCE6995C28982743001386B7 /* SecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondStepViewController.swift; sourceTree = "<group>"; };
+		CCE6995E28982750001386B7 /* ThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdStepViewController.swift; sourceTree = "<group>"; };
+		CCE6996028982757001386B7 /* FourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthStepViewController.swift; sourceTree = "<group>"; };
 		CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CF9D5CD0288FB19B00A3DA31 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
 		CFC82CC0288989F200555C1D /* MapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
@@ -206,6 +216,11 @@
 				36DF537A2891DFE80099CD64 /* CollectionVC.swift */,
 				CF5F3EAB2887E65D003A35B9 /* MapViewController.swift */,
 				0C2F79EA28858CB100D97093 /* BottomSheetViewController.swift */,
+				CC507D742898214A006F8743 /* OnBoardingViewController.swift */,
+				CC507D76289821FB006F8743 /* FirstStepViewController.swift */,
+				CCE6995C28982743001386B7 /* SecondStepViewController.swift */,
+				CCE6995E28982750001386B7 /* ThirdStepViewController.swift */,
+				CCE6996028982757001386B7 /* FourthStepViewController.swift */,
 				05E832F72886840600F78EE4 /* StartPageViewController.swift */,
 				0CE1784928905E4700D63B2D /* FinalBottomViewController.swift */,
 				36DF531828852ED10099CD64 /* AppDelegate.swift */,
@@ -387,16 +402,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C2F79EB28858CB100D97093 /* BottomSheetViewController.swift in Sources */,
+				CC507D77289821FB006F8743 /* FirstStepViewController.swift in Sources */,
 				0C350494288E36D50092A6D6 /* HeartBeatViewController.swift in Sources */,
 				0CC3C4592888319C0020CBBE /* FindTopicViewController.swift in Sources */,
 				36DF531D28852ED10099CD64 /* ViewController.swift in Sources */,
 				CFC82CC1288989F200555C1D /* MapMarker.swift in Sources */,
 				36DF531928852ED10099CD64 /* AppDelegate.swift in Sources */,
 				36DF537B2891DFE80099CD64 /* CollectionVC.swift in Sources */,
+				CCE6996128982757001386B7 /* FourthStepViewController.swift in Sources */,
+				CCE6995D28982743001386B7 /* SecondStepViewController.swift in Sources */,
 				05E832F82886840600F78EE4 /* StartPageViewController.swift in Sources */,
 				36DF531B28852ED10099CD64 /* SceneDelegate.swift in Sources */,
 				0C2F79ED2887F53900D97093 /* Protocol.swift in Sources */,
+				CCE6995F28982750001386B7 /* ThirdStepViewController.swift in Sources */,
 				0CE1784A28905E4700D63B2D /* FinalBottomViewController.swift in Sources */,
+				CC507D752898214A006F8743 /* OnBoardingViewController.swift in Sources */,
 				CF5F3EAC2887E65D003A35B9 /* MapViewController.swift in Sources */,
 				CCC27FFA28913BD500468C35 /* HeartKitAutorization.swift in Sources */,
 				0C93D2DF2892DD17004BDE7D /* CoreDataModel.xcdatamodeld in Sources */,
